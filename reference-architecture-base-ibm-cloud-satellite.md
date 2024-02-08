@@ -80,7 +80,7 @@ The base {{site.data.keyword.satellitelong_notm}} solution covers design conside
 
 - **Service Management:** Monitoring, Logging, Auditing/Tracking
 
-The [Introduction to the Architecture Framework](https://cloud.ibm.com/docs/architecture-framework?topic=architecture-framework-intro), provides a consistent approach to design cloud solutions by addressing requirements across a pre-defined set of aspects and domains, which are technology-agnostic architectural areas to consider for any enterprise solution. It can be used as a guide to make the necessary design and component choices. After you have identified the applicable requirements and domains that are in scope, you can evaluate and select the best fit for purpose components for your enterprise cloud solution.
+The [Introduction to the architecture framework](https://cloud.ibm.com/docs/architecture-framework?topic=architecture-framework-intro), provides a consistent approach to design cloud solutions by addressing requirements across a pre-defined set of aspects and domains, which are technology-agnostic architectural areas to consider for any enterprise solution. It can be used as a guide to make the necessary design and component choices. After you have identified the applicable requirements and domains that are in scope, you can evaluate and select the best fit for purpose components for your enterprise cloud solution.
 
 The Figure 3 shows the domains that are relevant in an {{site.data.keyword.satellitelong_notm}} solution.
 
@@ -113,7 +113,7 @@ The following table represents a baseline set of requirements which are applicab
 | | Encrypt all data using customer managed keys to meet regulatory compliance requirements for additional security and customer control. |
 | Resiliency | Multi-site capability to support a disaster recovery strategy and solution leveraging IBM Cloud infrastructure DR capabilities combined with {{site.data.keyword.satelliteshort}} features |
 | | Provide backups for data retention |
-| Service Management | Customer wants a fully managed service. |
+| Service management | Customer wants a fully managed service. |
 | | Monitor {{site.data.keyword.satelliteshort}} location health metrics to detect issues that might impact availability. |
 | | Monitor audit logs to track changes. |
 | Other | DevOps pipeline to help with deployment of applications to the {{site.data.keyword.satelliteshort}} location |
@@ -159,63 +159,63 @@ IBM Cloud {{site.data.keyword.satelliteshort}} is a fully managed offering hence
 | | {{site.data.keyword.satelliteshort}} Services Worker Nodes Hosts: \n  Other {{site.data.keyword.satelliteshort}}-enabled services | Based on {{site.data.keyword.satelliteshort}}-enabled service. This reference solution does not include any other services. |
 | | Containers | Managed OpenShift on {{site.data.keyword.satelliteshort}} |
 | | OpenShift cluster connectivity | Private Service cluster URL \n  Public DNS pointing to control plane node IPs by default \n  Private {{site.data.keyword.satelliteshort}} link endpoint for OpenShift cluster accessible within IBM Cloud private network  |
-| | Workloads Access | OpenShift Routes \n  Node Ports \n  Note: there is the ability to integrate external load balancers (basically just point load balancer to the OpenShift router node port) |
-| | Workload Isolation | Single cluster for all workloads |
-| | Container Images Registry | IBM Container Registry on IBM Cloud |
-| Storage | Storage: Primary | |
-| | {{site.data.keyword.satelliteshort}} Hosts: Control Plane & Worker Nodes	Host node local storage
-| | {{site.data.keyword.satelliteshort}} Services Storage: \n  OpenShift (Customer Workloads) | Software Defined Storage (SDS) |
-| | Software Defined Storage | ODF \n  Portworx Enterprise (if customer is existing Portworx user) |
-| | Portworx Enterprise Storage | Worker Node Host local disks |
-| | {{site.data.keyword.satelliteshort}} Services Storage Template: \n  OpenShift | Bring your Own Driver – Portworx |
-| | {{site.data.keyword.satelliteshort}} Services Storage Template: \n  Other {{site.data.keyword.satelliteshort}}-Enabled Services | Based on {{site.data.keyword.satelliteshort}} Enabled Service |
-| | Storage: Backup | |
-| | {{site.data.keyword.satelliteshort}} Control Plane Data | IBM Cloud Object Storage (IBM-managed backups) |
-| | OpenShift Workload Data | Customer may choose to use Cloud Object Storage (COS) on IBM Cloud |
-| Networking | Networking: Enterprise Connectivity | |
-| | {{site.data.keyword.satelliteshort}} Location and IBM Cloud | Direct Link 2.0 Connect or Internet |
-| | {{site.data.keyword.satelliteshort}} Location Private Network | VPN or Use {{site.data.keyword.satelliteshort}} link for TCP/HTTPS connections (no UDP)|
-| | Networking: Cloud Connectivity | |
-| | {{site.data.keyword.satelliteshort}} Location Connectivity | {{site.data.keyword.satelliteshort}} Link over Public Network
-| | {{site.data.keyword.satelliteshort}} Services Connectivity | {{site.data.keyword.satelliteshort}} Link Location Endpoint for OpenShift cluster
-| | IBM Cloud Services Connectivity | {{site.data.keyword.satelliteshort}} Link Cloud Endpoints
-| | Networking: Load Balancers | |
-| | OpenShift Application Load Balancer | 3rd party load balancer –Ingress Controller |
-| | Networking: Segmentation | |
-| | OpenShift cluster | Container Network Policies |
-| | Networking: DNS | Client DNS at {{site.data.keyword.satelliteshort}} location |
-| Security: Data | Data: Encryption at Rest	| |
-| | {{site.data.keyword.satelliteshort}} Control Plane Backup Storage | COS encrypted with provider keys |
-| | {{site.data.keyword.satelliteshort}} Worker Nodes Data | Worker Nodes Storage Encryption - Customer |
+| | Workloads Access | OpenShift Routes \n  Node Ports \n  There is the ability to integrate external load balancers, basically just point load balancer to the OpenShift router node port. {: note} |
+| | Workload isolation | Single cluster for all workloads |
+| | Container Images Registry | {{site.data.keyword.registrylong_notm}} on {{site.data.keyword.Bluemix_notm}} |
+| Storage | Primary | |
+| | {{site.data.keyword.satelliteshort}} Hosts: Control plane and worker nodes host node local storage
+| | {{site.data.keyword.satelliteshort}} Services storage: \n  OpenShift (Customer Workloads) | Software Defined Storage (SDS) |
+| | Software Defined Storage | ODF \n  Portworx enterprise (if customer is existing Portworx user) |
+| | Portworx enterprise storage | Worker node host local disks |
+| | {{site.data.keyword.satelliteshort}} services storage template: \n  OpenShift | Bring your Own Driver: Portworx |
+| | {{site.data.keyword.satelliteshort}} Services Storage Template: \n  Other {{site.data.keyword.satelliteshort}} enabled services | Based on {{site.data.keyword.satelliteshort}} enabled service |
+| | Backup | |
+| | {{site.data.keyword.satelliteshort}} Control Plane Data | {{site.data.keyword.cos_full_notm}} (IBM-managed backups) |
+| | OpenShift workload data | Customer might choose to use Cloud Object Storage on {{site.data.keyword.Bluemix_notm}} |
+| Networking |Enterprise Connectivity | |
+| | {{site.data.keyword.satelliteshort}} location and {{site.data.keyword.dl_full_notm}} 2.0 connect or internet |
+| | {{site.data.keyword.satelliteshort}} location private Network | VPN or Use {{site.data.keyword.satelliteshort}} link for TCP and HTTPS connections (no UDP)|
+| | Cloud Connectivity | |
+| | {{site.data.keyword.satelliteshort}} location connectivity | {{site.data.keyword.satelliteshort}} link over public network
+| | {{site.data.keyword.satelliteshort}} Services Connectivity | {{site.data.keyword.satelliteshort}} link location endpoint for OpenShift cluster
+| | {{site.data.keyword.Bluemix_notm}} services connectivity | {{site.data.keyword.satelliteshort}} link cloud endpoints
+| | Load balancers | |
+| | OpenShift application load balancer | 3rd party load balancer –Ingress Controller |
+| | Segmentation | |
+| | OpenShift cluster | Container network policies |
+| | DNS | Client DNS at {{site.data.keyword.satelliteshort}} location |
+| Security: Data | Data: Encryption at rest	| |
+| | {{site.data.keyword.satelliteshort}} control plane backup storage | Cloud object storage encrypted with provider keys |
+| | {{site.data.keyword.satelliteshort}} worker nodes data | Worker nodes storage encryption: Customer |
 | | OpenShift cluster persistent storage | Cluster volume encryption with Kubernetes Secret |
 | | Data: Encryption in Transit	| |
 | | {{site.data.keyword.satelliteshort}} Link | Encryption using TLS |
 | | OpenShift cluster workloads | App-level encryption using TLS |
-| | Data: Certificate Lifecycle Management | Customer on-prem certificate manager |
-| Security: Identity and Access Management (IAM) | Identify and Access: Access & Role Management	| |
-| |	{{site.data.keyword.satelliteshort}} Location | IBM Cloud Account Setup \n  Account & Resource Organization \n  IBM Cloud IAM Roles/Access Groups |
-| | {{site.data.keyword.satelliteshort}} Location Hosts | IBM Cloud IAM | |
-| | {{site.data.keyword.satelliteshort}} Services: \n  OpenShift (Customer Workloads Cluster) | IBM Cloud IAM Roles \n  Kubernetes Role-based access control (RBAC) Roles |
-| | Application: Runtime Security (WAF & DDoS) | Bring your own Edge Security | |
-| | Infrastructure & Endpoint: Core Network Protection | Subnets, firewall rules | |
-| | Threat Detection & Response: Threat Detection | Customer SIEM tool (e.g. Splunk) | |
-| Resiliency | Resiliency: High Availability | |
+| | Data: Certificate Lifecycle Management | Customer on-premises certificate manager |
+| Security: Identity and Access Management (IAM) | Access and role management	| |
+| |	{{site.data.keyword.satelliteshort}} Location | IBM Cloud Account Setup \n  Account & Resource Organization \n  {{site.data.keyword.Bluemix_notm}} IAM roles and access groups |
+| | {{site.data.keyword.satelliteshort}} location hosts | {{site.data.keyword.Bluemix_notm}} IAM | |
+| | {{site.data.keyword.satelliteshort}} services: \n  OpenShift (Customer Workloads Cluster) | {{site.data.keyword.Bluemix_notm}} IAM Roles \n  Kubernetes role-based access control (RBAC) Roles |
+| | Application: Runtime security (WAF & DDoS) | Bring your own Edge Security | |
+| | Infrastructure and endpoint: Core Network Protection | Subnets and firewall rules | |
+| | Threat detection and response: Threat detection | Customer SIEM tool, for example, Splunk | |
+| Resiliency | High availability | |
 | | {{site.data.keyword.satelliteshort}} Host Nodes (control and worker nodes) | Multi-zone deployment | |
-| | OpenShift Workloads | Multi-zone OpenShift cluster | |
+| | OpenShift workloads | Multi-zone OpenShift cluster | |
 | | Resiliency: Backup | |
 | | OpenShift clusters | Portworx PX Backup for Kubernetes | |
-| Service Management | Service Management: Monitoring | |
-| | {{site.data.keyword.satelliteshort}} Location & Hosts | IBM {{site.data.keyword.satelliteshort}} Monitoring Tool \n  IBM Cloud Monitoring | |
-| | OpenShift clusters | IBM Cloud Monitoring | |
+| Service management | Service Management: Monitoring | |
+| | {{site.data.keyword.satelliteshort}} location and hosts | IBM {{site.data.keyword.satelliteshort}} Monitoring Tool \n  {{site.data.keyword.monitoringlong_notm}} | |
+| | OpenShift clusters | {{site.data.keyword.monitoringlong_notm}} | |
 | | Service Management: Logging	| |
-| | {{site.data.keyword.satelliteshort}} Location & Hosts | IBM {{site.data.keyword.satelliteshort}} Log Analysis Tool \n  IBM Log Analysis |
+| | {{site.data.keyword.satelliteshort}} location and hosts | IBM {{site.data.keyword.satelliteshort}} {{site.data.keyword.loganalysisshort}} tool \n  {{site.data.keyword.loganalysislong}} |
 | | OpenShift clusters | IBM Log Analysis |
 | | Service Management: Auditing | |
-| | {{site.data.keyword.satelliteshort}}e Location Events | IBM Cloud Activity Tracker |
-| | OpenShift clusters | IBM Cloud Activity Tracker |
+| | {{site.data.keyword.satelliteshort}}e location events | {{site.data.keyword.cloudaccesstraillong}} |
+| | OpenShift clusters | {{site.data.keyword.cloudaccesstraillong}} |
 {: caption="Table 3. Components" caption-side="bottom"}
 
-## Solution Components for hybrid {{site.data.keyword.satelliteshort}} locations
+## Solution components for hybrid {{site.data.keyword.satelliteshort}} locations
 {#components-hybrid}
 
 In addition to the components listed in the {{site.data.keyword.satelliteshort}} location on-premises pattern, there are hyperscaler related components: 
