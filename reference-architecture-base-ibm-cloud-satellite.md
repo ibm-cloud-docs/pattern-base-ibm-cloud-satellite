@@ -2,7 +2,7 @@
 
 copyright:
     years: 2024
-lastupdated: "2024-1-8"
+lastupdated: "2024-02-08"
 
 keywords: # Not typically populated
 
@@ -33,54 +33,39 @@ content-type: reference-architecture
 {{site.data.keyword.attribute-definition-list}}
 
 
-# Base IBM Cloud Satellite <!-- H1 -->
+# Base {{site.data.keyword.satellitelong_notm}} 
 {: #base-ibm-cloud-satellite}
 {: toc-content-type="reference-architecture"}
 {: toc-use-case="Managed cloud"}
 {: toc-version="1.0"}
 
+There are two common solution patterns:
+- One or more {{site.data.keyword.satellitelong_notm}} locations configured on-premises
+- One {{site.data.keyword.satelliteshort}} location is configured on-premises, and another {{site.data.keyword.satelliteshort}} location is configured in the cloud
 
+Due to privacy, regulatory, or compliance reasons, customers might not have the option to send or store data in the public cloud. In such scenarios, the best option is to create one or more {{site.data.keyword.satelliteshort}} locations on-premises and host the data locally to satisfy the data residency requirement.
 
-Two common solution patterns are described here:
-1.	One or more Satellite locations configured on-premises
-2.	One Satellite location is configured on-premises, and another Satellite location is configured in the cloud
-
-
-<!-- After the introduction, include a summary of the typical use case for the architecture. The use case might include the motivation for the architecture composition, business challenge, or target cloud environments.
--->
-
-Due to privacy, regulatory or compliance reasons, customers may not have the option to send or store data in the public cloud. In such scenarios, the best option is to create one or more Satellite locations on-premises and host/store data "locally" to satisfy the data residency requirement.
-
-## Architecture diagram <!-- this is an H2 -->
+## Architecture diagrams
 {: #architecture-diagram}
 
+Figure 1 illustrates the {{site.data.keyword.satellitelong_notm}} architecture where one or more {{site.data.keyword.satelliteshort}} locations are deployed on-premises.
 
 
-Figure 1 illustrates the IBM Cloud Satellite architecture where one or more Satellite locations are deployed on-premises.
+![Satellite location on-premises architecture](/images/SatLoc-on-premises-architecture.svg){: caption="Figure 1. Base {{site.data.keyword.satellitelong_notm}} solution architecture with {{site.data.keyword.satelliteshort}} location on-premises" caption-side="bottom"}
 
+{{site.data.keyword.satelliteshort}} link connects on-premises {{site.data.keyword.satelliteshort}} locations to IBM Cloud. Customers may also choose to use Direct Link. Red Hat OpenShift and ODF are two of the many other {{site.data.keyword.satelliteshort}}-enabled services that are shown deployed in the {{site.data.keyword.satelliteshort}} location.
 
-![Satellite location on-premises architecture](/images/SatLoc-on-premises-architecture.svg){: caption="Figure 1. Base IBM Cloud Satellite Solution Architecture with Satellite location on-premises" caption-side="bottom"}
+Figure 2 illustrates the hybrid {{site.data.keyword.satellitelong_notm}} architecture where one or more {{site.data.keyword.satelliteshort}} locations are deployed on-premises and the other {{site.data.keyword.satelliteshort}} location is deployed in another cloud. The figure shows AWS as the hyperscaler.
 
+![Satellite location hybrid architecture](/images/SatLoc-hybrid-architecture.svg){: caption="Figure 2. Base {{site.data.keyword.satellitelong_notm}} Solution Architecture with Hybrid Satellite locations" caption-side="bottom"}
 
+A {{site.data.keyword.satelliteshort}} location can be created in IBM Cloud, AWS, Azure or Google. In this example one location is shown on AWS, While the other {{site.data.keyword.satelliteshort}} location is on-premises.
 
-Satellite link connects on-premises Satellite locations to IBM Cloud. Customers may also choose to use Direct Link. Red Hat OpenShift and ODF are two of the many other Satellite-enabled services that are shown deployed in the Satellite location.
-
-
-
-Figure 2 illustrates the hybrid IBM Cloud Satellite architecture where one or more Satellite locations are deployed on-premises and the other Satellite location is deployed in another cloud. The figure shows AWS as the hyperscaler.
-
-
-
-![Satellite location hybrid architecture](/images/SatLoc-hybrid-architecture.svg){: caption="Figure 2. Base IBM Cloud Satellite Solution Architecture with Hybrid Satellite locations" caption-side="bottom"}
-
-A Satellite location can be created in IBM Cloud, AWS, Azure or Google. In this example one location is shown on AWS, While the other Satellite location is on-premises.
-
-## Design scope <!-- H2 -->
+## Design scope
 {: #design-scope}
 
-Following the [Architecture Framework](https://test.cloud.ibm.com/docs-draft/architecture-framework?topic=architecture-framework-taxonomy), the base IBM Cloud Satellite solution covers design considerations and architecture decisions for the following aspects and domains:
+The base {{site.data.keyword.satellitelong_notm}} solution covers design considerations and architecture decisions for the following aspects and domains:
 
-<!-- include all aspectsand domains relavant to the pattern below -->
 - **Compute:** Bare Metal, Virtual Servers, Virtualization, Containers
 
 - **Storage:** Primary Storage, Backup Storage
@@ -95,58 +80,59 @@ Following the [Architecture Framework](https://test.cloud.ibm.com/docs-draft/arc
 
 - **Service Management:** Monitoring, Logging, Auditing/Tracking
 
-The Architecture Framework, described in [Introduction to the Architecture Framework](https://cloud.ibm.com/docs/architecture-framework?topic=architecture-framework-intro), provides a consistent approach to design cloud solutions by addressing requirements across a pre-defined set of aspects and domains, which are technology-agnostic architectural areas that need to be considered for any enterprise solution. It can be used as a guide to make the necessary design and component choices to ensure you have considered applicable requirements for each aspect and domain. After you have identified the applicable requirements and domains that are in scope, you can evaluate and select the best fit for purpose components for your enterprise cloud solution.
+The [Introduction to the Architecture Framework](https://cloud.ibm.com/docs/architecture-framework?topic=architecture-framework-intro), provides a consistent approach to design cloud solutions by addressing requirements across a pre-defined set of aspects and domains, which are technology-agnostic architectural areas to consider for any enterprise solution. It can be used as a guide to make the necessary design and component choices. After you have identified the applicable requirements and domains that are in scope, you can evaluate and select the best fit for purpose components for your enterprise cloud solution.
 
-The Figure 3 shows the domains that are relevant in an IBM Cloud Satellite solution.
+The Figure 3 shows the domains that are relevant in an {{site.data.keyword.satellitelong_notm}} solution.
 
 <!-- use the draw.io framework template to create your heatmap image, located here https://ibm.ent.box.com/file/1389368500379 -->
 
-![Base Satellite architecture framework](/images/Base-Satellite-AF.svg){: caption="Figure 3. Base IBM Cloud Satellite Architecture Framework" caption-side="bottom"}
+![Base {{site.data.keyword.satelliteshort}} architecture framework](/images/Base-Satellite-AF.svg){: caption="Figure 3. Base {{site.data.keyword.satellitelong_notm}} Architecture Framework" caption-side="bottom"}
 
-A. Solution Components for Satellite location on-premises
----
 
-## Requirements <!-- H2 -->
+## Solution components and requirements for {{site.data.keyword.satelliteshort}} location on-premises
+{: #solution-components-on-prem}
+
+Review the following requirements and components for an on-premises {{site.data.keyword.satelliteshort}} location.  
+
+### Requirements
 {: #requirements}
 
-<!-- insert the requirements table, below is an example -->
-
-The following represents a baseline set of requirements which are applicable to many clients and critical to successful IBM Cloud Satellite deployment.
+The following table represents a baseline set of requirements which are applicable to many clients and critical to a successful {{site.data.keyword.satellitelong_notm}} deployment.
 
 | Aspect | Requirement |
 |---|---|
-| Compute | Customer would like to use the VMs they have on-premises as hosts in Satellite location. |
+| Compute | Customer would like to use the VMs they have on-premises as the hosts in {{site.data.keyword.satelliteshort}} location. |
 | | Customer is looking to use CoreOS |
 | Storage | Provide storage that meets the application and database performance requirements. |
-| Network | Provide secure, encrypted connectivity from Satellite location to IBM Cloud. |
-| | Customer has Direct Link. Use DL to connect IBM Cloud to hosts in Satellite Location. |
+| Network | Provide secure, encrypted connectivity from {{site.data.keyword.satelliteshort}} location to IBM Cloud. |
+| | Customer has Direct Link. Use DL to connect IBM Cloud to hosts in {{site.data.keyword.satelliteshort}} Location. |
 | | Access customer's existing Red Hat Container Registry. |
 | Data | Data residency requirements require that the customer’s data not leave the region. |
 | Security | Encrypt all application data in transit and at rest to protect from unauthorized disclosure. |
 | | Customer would like to use their Hardware Security Module (HSM). \n  Note: HSM owner is responsible for its connectivity, monitoring, and integration with Key Protect |
 | | Encrypt all data using customer managed keys to meet regulatory compliance requirements for additional security and customer control. |
-| Resiliency | Multi-site capability to support a disaster recovery strategy and solution leveraging IBM Cloud infrastructure DR capabilities combined with Satellite features |
+| Resiliency | Multi-site capability to support a disaster recovery strategy and solution leveraging IBM Cloud infrastructure DR capabilities combined with {{site.data.keyword.satelliteshort}} features |
 | | Provide backups for data retention |
 | Service Management | Customer wants a fully managed service. |
-| | Monitor Satellite location health metrics to detect issues that might impact availability. |
+| | Monitor {{site.data.keyword.satelliteshort}} location health metrics to detect issues that might impact availability. |
 | | Monitor audit logs to track changes. |
-| Other | DevOps pipeline to help with deployment of applications to the Satellite location |
+| Other | DevOps pipeline to help with deployment of applications to the {{site.data.keyword.satelliteshort}} location |
 {: caption="Table 1. Requirements" caption-side="bottom"}
 
-## Satellite Shared Responsibility Matrix <!-- H2 -->
+### {{site.data.keyword.satelliteshort}} Shared Responsibility Matrix
 
-IBM Cloud Satellite is a fully managed offering hence there are certain responsibilities that are shared by IBM and the customer. The table below shows the breakdown. The table and the corresponding task details can  be found [here](https://cloud.ibm.com/docs/satellite?topic=satellite-responsibilities).
+IBM Cloud {{site.data.keyword.satelliteshort}} is a fully managed offering hence there are certain responsibilities that are shared by IBM and the customer. The table below shows the breakdown. For more information about the table and the corresponding task details, see [{{site.data.keyword.satelliteshort}} responsibilities](/docs/satellite?topic=satellite-responsibilities).
 
-| Resource | [Incident & operations management](https://cloud.ibm.com/docs/satellite?topic=satellite-responsibilities#incident-and-ops) | [Change management](https://cloud.ibm.com/docs/satellite?topic=satellite-responsibilities#change-management) | [Identity & access management](https://cloud.ibm.com/docs/satellite?topic=satellite-responsibilities#iam-responsibilities) | [Security &regulation compliance](https://cloud.ibm.com/docs/satellite?topic=satellite-responsibilities#security-compliance) | [Disaster Recovery](https://cloud.ibm.com/docs/satellite?topic=satellite-responsibilities#disaster-recovery) |
+| Resource | [Incident & operations management](docs/satellite?topic=satellite-responsibilities#incident-and-ops) | [Change management](/docs/satellite?topic=satellite-responsibilities#change-management) | [Identity & access management](/docs/satellite?topic=satellite-responsibilities#iam-responsibilities) | [Security &regulation compliance](/docs/satellite?topic=satellite-responsibilities#security-compliance) | [Disaster Recovery](/docs/satellite?topic=satellite-responsibilities#disaster-recovery) |
 |---|---|---|---|---|---|
 | Data | Customer | Customer | Customer | Customer | Customer |
 | Application | Customer | Customer | Customer | Customer | Customer |
-| Satellite Location | Shared | Shared | Shared | Shared | Shared |
-| Satellite Host | Shared | Shared | Shared | Shared | Shared |
-| Satellite Config | Shared | Shared | Shared | Shared | Shared |
-| Satellite Link | Shared | Shared | Shared | Shared | Customer |
-| Satellite Storage	| Shared | Shared | Customer | Shared | Shared |
-| Satellite-enabled services | Shared | Shared | Shared | Shared | Shared |
+| {{site.data.keyword.satelliteshort}} Location | Shared | Shared | Shared | Shared | Shared |
+| {{site.data.keyword.satelliteshort}} Host | Shared | Shared | Shared | Shared | Shared |
+| {{site.data.keyword.satelliteshort}} Config | Shared | Shared | Shared | Shared | Shared |
+| {{site.data.keyword.satelliteshort}} Link | Shared | Shared | Shared | Shared | Customer |
+| {{site.data.keyword.satelliteshort}} Storage	| Shared | Shared | Customer | Shared | Shared |
+| {{site.data.keyword.satelliteshort}}-enabled services | Shared | Shared | Shared | Shared | Shared |
 | Operating System | Customer | Shared | Customer | Shared | Customer |
 | Virtual & bare metal servers | Customer | Customer | Customer | Customer | Customer |
 | Virtual storage | Customer | Customer | Customer | Customer | Customer |
@@ -158,86 +144,85 @@ IBM Cloud Satellite is a fully managed offering hence there are certain responsi
 | Facilities and data centers | Customer | Customer | Customer | Customer | Customer |
 {: caption="Table 2. Shared Responsibility Matrix" caption-side="bottom"}
 
-## Components <!-- H2 -->
+### Components <!-- H2 -->
 {: #components}
-
-<!-- insert the components list, below is an example -->
 
 | Aspect| Component| How the component is used |
 |---|---|---|
-| Cloud | IBM Cloud Satellite | Distributed Cloud paradigm |
-| | Satellite: Location Infrastructure | On-premises: Client provided infrastructure |
-| | Satellite: Management Plane MZR | Closest region (MZR) to Satellite Location |
-| Compute | Satellite Location Hosts | Virtual Machine (VM) or Bare Metal |
+| Cloud | {{site.data.keyword.satellitelong_notm}} | Distributed cloud paradigm |
+| | {{site.data.keyword.satelliteshort}}: Location infrastructure | On-premises: Client provided infrastructure |
+| | {{site.data.keyword.satelliteshort}}: Management Plane MZR | Closest region (MZR) to {{site.data.keyword.satelliteshort}} location |
+| Compute | {{site.data.keyword.satelliteshort}} location hosts | Virtual Machine (VM) or {{site.data.keyword.baremetal_short_sing}} |
 | | Host OS | RHEL 8.x or RHCOS |
 | | Control Plane Hosts	| 4 vCPU and 16GB RAM |
-| | Satellite Services Worker Nodes Hosts: \n  OpenShift (Customer Workload Cluster) | 16 vCPU and 64GB RAM (min 3+spares) for ODF persistent storage. \n  Regular nodes tailored to workload but can be as low as  4x16 |
-| | Satellite Services Worker Nodes Hosts: \n  Other Satellite-Enabled-Services | Based on Satellite-enabled service. This reference solution does not include any other services. |
-| | Containers | Managed OpenShift on Satellite |
-| | OpenShift Cluster Connectivity | Private Service Cluster URL \n  Public DNS pointing to control plane node IPs by default OR \n  Private satellite link endpoint for openshift cluster accessible within IBM Cloud private network  |
-| | Workloads Access | OpenShift Routes \n  Node Ports \n  Note: there is the ability to integrate external load balancers (basically just point load balancer to the openshift router node port) |
+| | {{site.data.keyword.satelliteshort}} Services Worker Nodes Hosts: \n  OpenShift (Customer Workload Cluster) | 16 vCPU and 64GB RAM (min 3+spares) for ODF persistent storage. \n  Regular nodes tailored to workload but can be as low as 4x16 |
+| | {{site.data.keyword.satelliteshort}} Services Worker Nodes Hosts: \n  Other {{site.data.keyword.satelliteshort}}-enabled services | Based on {{site.data.keyword.satelliteshort}}-enabled service. This reference solution does not include any other services. |
+| | Containers | Managed OpenShift on {{site.data.keyword.satelliteshort}} |
+| | OpenShift cluster connectivity | Private Service cluster URL \n  Public DNS pointing to control plane node IPs by default \n  Private {{site.data.keyword.satelliteshort}} link endpoint for OpenShift cluster accessible within IBM Cloud private network  |
+| | Workloads Access | OpenShift Routes \n  Node Ports \n  Note: there is the ability to integrate external load balancers (basically just point load balancer to the OpenShift router node port) |
 | | Workload Isolation | Single cluster for all workloads |
 | | Container Images Registry | IBM Container Registry on IBM Cloud |
 | Storage | Storage: Primary | |
-| | Satellite Hosts: Control Plane & Worker Nodes	Host node local storage
-| | Satellite Services Storage: \n  OpenShift (Customer Workloads) | Software Defined Storage (SDS) |
+| | {{site.data.keyword.satelliteshort}} Hosts: Control Plane & Worker Nodes	Host node local storage
+| | {{site.data.keyword.satelliteshort}} Services Storage: \n  OpenShift (Customer Workloads) | Software Defined Storage (SDS) |
 | | Software Defined Storage | ODF \n  Portworx Enterprise (if customer is existing Portworx user) |
 | | Portworx Enterprise Storage | Worker Node Host local disks |
-| | Satellite Services Storage Template: \n  OpenShift | Bring your Own Driver – Portworx |
-| | Satellite Services Storage Template: \n  Other Satellite-Enabled Services | Based on Satellite Enabled Service |
+| | {{site.data.keyword.satelliteshort}} Services Storage Template: \n  OpenShift | Bring your Own Driver – Portworx |
+| | {{site.data.keyword.satelliteshort}} Services Storage Template: \n  Other {{site.data.keyword.satelliteshort}}-Enabled Services | Based on {{site.data.keyword.satelliteshort}} Enabled Service |
 | | Storage: Backup | |
-| | Satellite Control Plane Data | IBM Cloud Object Storage (IBM-managed backups) |
+| | {{site.data.keyword.satelliteshort}} Control Plane Data | IBM Cloud Object Storage (IBM-managed backups) |
 | | OpenShift Workload Data | Customer may choose to use Cloud Object Storage (COS) on IBM Cloud |
 | Networking | Networking: Enterprise Connectivity | |
-| | Satellite Location and IBM Cloud | Direct Link 2.0 Connect or Internet |
-| | Satellite Location Private Network | VPN or Use satellite link for TCP/HTTPS connections (no UDP)|
+| | {{site.data.keyword.satelliteshort}} Location and IBM Cloud | Direct Link 2.0 Connect or Internet |
+| | {{site.data.keyword.satelliteshort}} Location Private Network | VPN or Use {{site.data.keyword.satelliteshort}} link for TCP/HTTPS connections (no UDP)|
 | | Networking: Cloud Connectivity | |
-| | Satellite Location Connectivity | Satellite Link over Public Network
-| | Satellite Services Connectivity | Satellite Link Location Endpoint for OpenShift Cluster
-| | IBM Cloud Services Connectivity | Satellite Link Cloud Endpoints
+| | {{site.data.keyword.satelliteshort}} Location Connectivity | {{site.data.keyword.satelliteshort}} Link over Public Network
+| | {{site.data.keyword.satelliteshort}} Services Connectivity | {{site.data.keyword.satelliteshort}} Link Location Endpoint for OpenShift cluster
+| | IBM Cloud Services Connectivity | {{site.data.keyword.satelliteshort}} Link Cloud Endpoints
 | | Networking: Load Balancers | |
 | | OpenShift Application Load Balancer | 3rd party load balancer –Ingress Controller |
 | | Networking: Segmentation | |
-| | OpenShift Cluster | Container Network Policies |
-| | Networking: DNS | Client DNS at Satellite location |
+| | OpenShift cluster | Container Network Policies |
+| | Networking: DNS | Client DNS at {{site.data.keyword.satelliteshort}} location |
 | Security: Data | Data: Encryption at Rest	| |
-| | Satellite Control Plane Backup Storage | COS encrypted with provider keys |
-| | Satellite Worker Nodes Data | Worker Nodes Storage Encryption - Customer |
-| | OpenShift Cluster Persistent Storage | Cluster Volume Encryption with Kubernetes Secret |
+| | {{site.data.keyword.satelliteshort}} Control Plane Backup Storage | COS encrypted with provider keys |
+| | {{site.data.keyword.satelliteshort}} Worker Nodes Data | Worker Nodes Storage Encryption - Customer |
+| | OpenShift cluster persistent storage | Cluster volume encryption with Kubernetes Secret |
 | | Data: Encryption in Transit	| |
-| | Satellite Link | Encryption using TLS |
-| | OpenShift Cluster Workloads | App-level encryption using TLS |
+| | {{site.data.keyword.satelliteshort}} Link | Encryption using TLS |
+| | OpenShift cluster workloads | App-level encryption using TLS |
 | | Data: Certificate Lifecycle Management | Customer on-prem certificate manager |
 | Security: Identity and Access Management (IAM) | Identify and Access: Access & Role Management	| |
-| |	Satellite Location | IBM Cloud Account Setup \n  Account & Resource Organization \n  IBM Cloud IAM Roles/Access Groups |
-| | Satellite Location Hosts | IBM Cloud IAM | |
-| | Satellite Services: \n  OpenShift (Customer Workloads Cluster) | IBM Cloud IAM Roles \n  Kubernetes Role-based access control (RBAC) Roles |
+| |	{{site.data.keyword.satelliteshort}} Location | IBM Cloud Account Setup \n  Account & Resource Organization \n  IBM Cloud IAM Roles/Access Groups |
+| | {{site.data.keyword.satelliteshort}} Location Hosts | IBM Cloud IAM | |
+| | {{site.data.keyword.satelliteshort}} Services: \n  OpenShift (Customer Workloads Cluster) | IBM Cloud IAM Roles \n  Kubernetes Role-based access control (RBAC) Roles |
 | | Application: Runtime Security (WAF & DDoS) | Bring your own Edge Security | |
 | | Infrastructure & Endpoint: Core Network Protection | Subnets, firewall rules | |
 | | Threat Detection & Response: Threat Detection | Customer SIEM tool (e.g. Splunk) | |
 | Resiliency | Resiliency: High Availability | |
-| | Satellite Host Nodes (control and worker nodes) | Multi-zone deployment | |
-| | OpenShift Workloads | Multi-zone OpenShift Cluster | |
+| | {{site.data.keyword.satelliteshort}} Host Nodes (control and worker nodes) | Multi-zone deployment | |
+| | OpenShift Workloads | Multi-zone OpenShift cluster | |
 | | Resiliency: Backup | |
-| | OpenShift Clusters | Portworx PX Backup for Kubernetes | |
+| | OpenShift clusters | Portworx PX Backup for Kubernetes | |
 | Service Management | Service Management: Monitoring | |
-| | Satellite Location & Hosts | IBM Satellite Monitoring Tool \n  IBM Cloud Monitoring | |
-| | OpenShift Clusters | IBM Cloud Monitoring | |
+| | {{site.data.keyword.satelliteshort}} Location & Hosts | IBM {{site.data.keyword.satelliteshort}} Monitoring Tool \n  IBM Cloud Monitoring | |
+| | OpenShift clusters | IBM Cloud Monitoring | |
 | | Service Management: Logging	| |
-| | Satellite Location & Hosts | IBM Satellite Log Analysis Tool \n  IBM Log Analysis |
-| | OpenShift Clusters | IBM Log Analysis |
+| | {{site.data.keyword.satelliteshort}} Location & Hosts | IBM {{site.data.keyword.satelliteshort}} Log Analysis Tool \n  IBM Log Analysis |
+| | OpenShift clusters | IBM Log Analysis |
 | | Service Management: Auditing | |
-| | Satellite Location Events | IBM Cloud Activity Tracker |
-| | OpenShift Clusters | IBM Cloud Activity Tracker |
+| | {{site.data.keyword.satelliteshort}}e Location Events | IBM Cloud Activity Tracker |
+| | OpenShift clusters | IBM Cloud Activity Tracker |
 {: caption="Table 3. Components" caption-side="bottom"}
 
-B. Solution Components for hybrid Satellite locations
----
+## Solution Components for hybrid {{site.data.keyword.satelliteshort}} locations
+{#components-hybrid}
 
-In addition to the components listed in the Satellite location on-premises pattern, above, there would be hyperscaler related components. For example:
+In addition to the components listed in the {{site.data.keyword.satelliteshort}} location on-premises pattern, there are hyperscaler related components: 
+
 - Hyperscaler infrastructure
 - Hyperscaler specific container registry
-- Direct network connection between Satellite location and IBM Cloud
-- Hperscaler specific activity tracker
+- Direct network connection between {{site.data.keyword.satelliteshort}} location and {{site.data.keyword.Bluemix_notm}}
+- Hyperscaler specific activity tracker
 
-The Architecture Framework is used to guide and determine the applicable aspects and domains for which architecture decisions need to be made. Access the design considerations and architecture decisions for the aspects and domains that are in play in this solution pattern, from the left navigation menu.
+The architecture framework is used to guide and determine the applicable aspects and domains for which architecture decisions need to be made. Review the design considerations and architecture decisions for the aspects and domains that are in play in this solution pattern.
