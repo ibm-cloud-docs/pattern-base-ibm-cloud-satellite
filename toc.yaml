@@ -1,0 +1,83 @@
+#  Name your file `toc.yaml`
+#  Make sure you include all nav file coding requirements
+#  Anything with a fully qualified URL with `http` or `https` will get an external link icon added to the nav entry
+---
+toc:
+  properties:
+    subcollection: pattern-base-ibm-cloud-satellite
+    # industry: industry-value
+    use-case: Managed cloud
+    # compliance: compliance-value
+    audience: solution
+    content-type: deployment
+    href: /docs/pattern-base-ibm-cloud-satellite
+    path: pattern-base-ibm-cloud-satellite
+    description: Deployment considerations for IBM Cloud Satellite with on-premises Satellite location and hybrid Satellite locations
+    label: Base Satellite
+
+  entries:
+  - navgroup:
+      id: overview
+      topics:
+      - overview.md
+
+  - navgroup:
+      id: architecture
+      topics:
+      - reference-architecture-base-ibm-cloud-satellite.md
+
+  - navgroup:
+      id: plan
+      topics:
+      - topicgroup:
+          label: Design considerations
+          topics:
+          - topic: compute-design.md
+            navtitle: Compute
+          - topic: storage-design.md
+            navtitle: Storage
+          - topic: networking-design.md
+            navtitle: Networking
+          - topic: data-design.md
+            navtitle: Data
+          - topic: security-design.md
+            navtitle: Security
+          - topic: resiliency-design.md
+            navtitle: Resiliency
+          - topic: service-management-design.md
+            navtitle: Service management
+          # - other-design.md
+      - topicgroup:
+          label: Architecture decisions
+          topics:
+          - topic: compute-architecture.md
+            navtitle: Compute
+          - topic: storage-architecture.md
+            navtitle: Storage
+          - topic: networking-architecture.md
+            navtitle: Networking
+          - topic: data-architecture.md
+            navtitle: Data
+          - topic: security-architecture.md
+            navtitle: Security
+          - topic: resiliency-architecture.md
+            navtitle: Resiliency
+          - topic: service-management-architecture.md
+            navtitle: Service management
+          # - other-architecture.md
+
+  - navgroup:
+      id: deploy
+      topics:
+      - topic-7.md
+      - topic-8.md
+
+  - navgroup:
+      id: reference
+      topics:
+      - references.md
+
+  - navgroup:
+      id: help
+      topics:
+      - topic: topic-10.md
