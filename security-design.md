@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024
-lastupdated: "2024-1-8"
+lastupdated: "2024-02-12"
 
 subcollection: pattern-base-ibm-cloud-satellite
 
@@ -15,8 +15,6 @@ keywords:
 # Security design
 {: #security-design}
 
-<!-- text for security design considerations goes here -->
+From the security aspect, {{site.data.keyword.satellitelong_notm}} extends security access policies, logging, monitoring, and other controls to all {{site.data.keyword.satellitelong_notm}} locations. Customers can build new apps quickly, while maintaining strong regulatory controls. {{site.data.keyword.satelliteshort}}Link works with customers existing security posture.
 
-From the security aspect, IBM Cloud Satellite extends security access policies, logging, monitoring and other controls to all IBM Cloud Satellite locations. Customers can build new apps quickly, while maintaining strong regulatory controls. Satellite Link works with customers existing security posture.
-
-With Satellite link all communication over it is encrypted by IBM and it uses a zero trust model. See [Satellite Link](https://cloud.ibm.com/docs/satellite?topic=satellite-link-location-cloud).
+With {{site.data.keyword.satelliteshort}} link all communication over it is encrypted by {{site.data.keyword.Bluemix_short}} and it uses a zero trust model. For more information, see [{{site.data.keyword.satelliteshort}} Link](/docs/satellite?topic=satellite-link-location-cloud).

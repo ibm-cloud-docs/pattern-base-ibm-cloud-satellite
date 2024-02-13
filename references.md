@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024
-lastupdated: "2024-1-8"
+lastupdated: "2024-02-12"
 
 subcollection: pattern-base-ibm-cloud-satellite
 
@@ -12,9 +12,10 @@ keywords:
 
 {{site.data.keyword.attribute-definition-list}}
 
-<!-- exapmles of format are below -->
 # References
 {: #references}
+
+Review the following references to guide you through the {{site.data.keyword.satellitelong}} pattern.
 
 [IBM Cloud Satellite docs](https://cloud.ibm.com/docs/satellite?topic=satellite-service-architecture)
 
