@@ -41,7 +41,7 @@ The following are network segmentation and isolation architecture decisions for 
 
 | Architecture decision | Requirement | Option | Decision | Rationale |
 |---|---|---|---|---|
-| | Network segmentation and isolation | - [Container Network Policies](https://cloud.ibm.com/docs/openshift?topic=openshift-network_policies) \n- OpenShift Service Mesh | Container Network Policies | Container network policies restrict egress/ingress traffic and communication between applications. \n- Allow or block network traffic on specific network interfaces regardless of the Kubernetes pod source or destination IP address or CIDR. \n- Allow or block network traffic for pods across namespaces. For additional guidance see [link](https://cloud.ibm.com/docs/openshift?topic=openshift-vpc-network-policy). |
+| Network segmentation | Network segmentation and isolation | - [Container Network Policies](https://cloud.ibm.com/docs/openshift?topic=openshift-network_policies) \n- OpenShift Service Mesh | Container Network Policies | Container network policies restrict egress/ingress traffic and communication between applications. \n- Allow or block network traffic on specific network interfaces regardless of the Kubernetes pod source or destination IP address or CIDR. \n- Allow or block network traffic for pods across namespaces. For additional guidance see [link](https://cloud.ibm.com/docs/openshift?topic=openshift-vpc-network-policy). |
 {: caption="Table 2. Architecture decisions for network segmentation and isolation" caption-side="bottom"}
 
 
@@ -65,5 +65,5 @@ The following are DNS architecture decisions for this design.
 
 | Architecture decision | Requirement | Option | Decision | Rationale |
 |---|---|---|---|---|
-| | Public DNS | - Client DNS at Satellite location \n- Cloud Internet Services | Client DNS at Satellite location | Provides consistent DNS across Satellite location private cloud to support custom DNS domains (vs DNS domains provided by default) |
+| DNS | Public DNS | - Client DNS at Satellite location \n- Cloud Internet Services | Client DNS at Satellite location | Provides consistent DNS across Satellite location private cloud to support custom DNS domains (vs DNS domains provided by default) |
 {: caption="Table 4. Architecture decisions for domain name system" caption-side="bottom"}
