@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024
-lastupdated: "2024-1-8"
+lastupdated: "2024-02-12"
 
 subcollection: pattern-base-ibm-cloud-satellite
 
@@ -16,17 +16,17 @@ keywords: Satellite, location
 <!-- below is a placeholder for all compute domain decisions  Remove the domains that are not in scope.  If there are decisions
 that need to be added (e.g. platform dependent) add additional rows-->
 
-The following are security architecture decisions for the base IBM Cloud Satellite pattern.
+The following are security architecture decisions for the base {{site.data.keyword.satellitelong_notm}} pattern.
 
 ## Architecture decisions for data security - encryption
 {: #data-encryption}
 
 | Architecture decision | Requirement |  Option | Decision | Rationale |
 |---|---|---|---|---|
-| Data Encryption | Data: Encryption at Rest \n  Satellite Worker Nodes Data	| Worker Nodes Storage Encryption - Customer | Worker Nodes Storage Encryption - Customer	| Customer is responsible for encrypting the boot disk and any additional disks added to the Satellite worker nodes hosts to keep data secure and meet regulatory requirements. |
+| Data Encryption | Data: Encryption at rest \n  {{site.data.keyword.satelliteshort}} worker nodes data	| Worker nodes storage encryption: Customer | Worker nodes storage encryption: Customer	| Customer is responsible for encrypting the boot disk and any additional disks added to the {{site.data.keyword.satelliteshort}} worker nodes hosts to keep data secure and meet regulatory requirements. |
 | | Data: Encryption at Rest \n  OpenShift Persistent Storage | - Backing-storage Device Encryption \n- Cluster Volume Encryption with Kubernetes Secret \n- Key Protect on IBM Cloud \n- Bring your own (BYO) HSM | Cluster Volume Encryption with Kubernetes Secret | The customer is responsible for encrypting persistent storage by configuring storage device encryption or cluster encryption, if supported by the storage provider. In this solution, Portworx is used to provide persistent storage for OpenShift cluster workloads. \n  Example Portworx set up: volume encryption with customers keys stored in Kubernetes Secret to encrypt data in transit and at rest. \n  add Kubernetes Secret encryption |
-| | Data: Encryption at Rest & in Transit \n  Backup Storage	| - COS encrypted w/ provider keys \n- COS encrypted with Key Management Service (KMS) | COS encrypted w/ provider keys	| IBM-managed backups of the Satellite location control plane data are stored in customer-provisioned COS buckets. Customer can select to encrypt COS bucket with IBM Cloud keys or KMS (Key Protect or HPCS) provisioned in IBM Cloud MZR used to manage Satellite. In this solution, the customer COS bucket is encrypted with IBM Cloud keys. |
-| | Data: Encryption in Transit \n  Satellite Link	| Satellite Link encryption	| Satellite Link encryption	| All data that is transported over Satellite Link is encrypted using TLS 1.3 standards. This level of encryption is managed by IBM. |
+| | Data: Encryption at Rest & in Transit \n  Backup Storage	| - COS encrypted w/ provider keys \n- COS encrypted with Key Management Service (KMS) | COS encrypted w/ provider keys	| IBM-managed backups of the {{site.data.keyword.satelliteshort}} location control plane data are stored in customer-provisioned COS buckets. Customer can select to encrypt COS bucket with IBM Cloud keys or KMS (Key Protect or HPCS) provisioned in IBM Cloud MZR used to manage Satellite. In this solution, the customer COS bucket is encrypted with IBM Cloud keys. |
+| | Data: Encryption in Transit \n  {{site.data.keyword.satelliteshort}} Link	| Satellite Link encryption	| Satellite Link encryption	| All data that is transported over Satellite Link is encrypted using TLS 1.3 standards. This level of encryption is managed by IBM. |
 | | Data: Encryption in Transit \n  OpenShift Cluster Workloads | App-level encryption using TLS \n  OpenShift Service Mesh | App-level encryption using TLS | Encryption in transit of application data is the customer’s responsibility. Applications can encrypt data using TLS 1.2 at a minimum. |
 | Certificates | Data: Certificate Lifecycle Management | - Secrets Manager on IBM Cloud \n- BYO Certificates | BYO Certificates | Customer is responsible for providing and managing TLS certificates used for encrypting communication for workloads deployed on Satellite clusters. |
 {: caption="Table 1. Data encryption architecture decisions" caption-side="bottom"}

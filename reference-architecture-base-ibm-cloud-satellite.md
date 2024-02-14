@@ -53,7 +53,7 @@ Figure 1 illustrates the {{site.data.keyword.satellitelong_notm}} architecture w
 
 ![Satellite location on-premises architecture](/images/SatLoc-on-premises-architecture.svg){: caption="Figure 1. Base {{site.data.keyword.satellitelong_notm}} solution architecture with {{site.data.keyword.satelliteshort}} location on-premises" caption-side="bottom"}
 
-{{site.data.keyword.satelliteshort}} link connects on-premises {{site.data.keyword.satelliteshort}} locations to IBM Cloud. Customers may also choose to use Direct Link. Red Hat OpenShift and ODF are two of the many other {{site.data.keyword.satelliteshort}}-enabled services that are shown deployed in the {{site.data.keyword.satelliteshort}} location.
+{{site.data.keyword.satelliteshort}} link connects on-premises {{site.data.keyword.satelliteshort}} locations to IBM Cloud. Customers may also choose to use Direct Link. Red Hat OpenShift and OpenShift Data Foundationare two of the many other {{site.data.keyword.satelliteshort}}-enabled services that are shown deployed in the {{site.data.keyword.satelliteshort}} location.
 
 Figure 2 illustrates the hybrid {{site.data.keyword.satellitelong_notm}} architecture where one or more {{site.data.keyword.satelliteshort}} locations are deployed on-premises and the other {{site.data.keyword.satelliteshort}} location is deployed in another cloud. The figure shows AWS as the hyperscaler.
 
@@ -155,17 +155,17 @@ IBM Cloud {{site.data.keyword.satelliteshort}} is a fully managed offering hence
 | Compute | {{site.data.keyword.satelliteshort}} location hosts | Virtual Machine (VM) or {{site.data.keyword.baremetal_short_sing}} |
 | | Host OS | RHEL 8.x or RHCOS |
 | | Control Plane Hosts	| 4 vCPU and 16GB RAM |
-| | {{site.data.keyword.satelliteshort}} Services Worker Nodes Hosts: \n  OpenShift (Customer Workload Cluster) | 16 vCPU and 64GB RAM (min 3+spares) for ODF persistent storage. \n  Regular nodes tailored to workload but can be as low as 4x16 |
+| | {{site.data.keyword.satelliteshort}} Services Worker Nodes Hosts: \n  OpenShift (Customer Workload Cluster) | 16 vCPU and 64GB RAM (min 3+spares) for OpenShift Data Foundationpersistent storage. \n  Regular nodes tailored to workload but can be as low as 4x16 |
 | | {{site.data.keyword.satelliteshort}} Services Worker Nodes Hosts: \n  Other {{site.data.keyword.satelliteshort}}-enabled services | Based on {{site.data.keyword.satelliteshort}}-enabled service. This reference solution does not include any other services. |
 | | Containers | Managed OpenShift on {{site.data.keyword.satelliteshort}} |
-| | OpenShift cluster connectivity | Private Service cluster URL \n  Public DNS pointing to control plane node IPs by default \n  Private {{site.data.keyword.satelliteshort}} link endpoint for OpenShift cluster accessible within IBM Cloud private network  |
+| | OpenShift cluster connectivity | Private Service cluster URL \n  Public Domain Name System (DNS) pointing to control plane node IPs by default \n  Private {{site.data.keyword.satelliteshort}} link endpoint for OpenShift cluster accessible within IBM Cloud private network  |
 | | Workloads Access | OpenShift Routes \n  Node Ports \n  There is the ability to integrate external load balancers, basically just point load balancer to the OpenShift router node port. {: note} |
 | | Workload isolation | Single cluster for all workloads |
 | | Container Images Registry | {{site.data.keyword.registrylong_notm}} on {{site.data.keyword.Bluemix_notm}} |
 | Storage | Primary | |
 | | {{site.data.keyword.satelliteshort}} Hosts: Control plane and worker nodes host node local storage
 | | {{site.data.keyword.satelliteshort}} Services storage: \n  OpenShift (Customer Workloads) | Software Defined Storage (SDS) |
-| | Software Defined Storage | ODF \n  Portworx enterprise (if customer is existing Portworx user) |
+| | Software Defined Storage | OpenShift Data Foundation\n  Portworx enterprise (if customer is existing Portworx user) |
 | | Portworx enterprise storage | Worker node host local disks |
 | | {{site.data.keyword.satelliteshort}} services storage template: \n  OpenShift | Bring your Own Driver: Portworx |
 | | {{site.data.keyword.satelliteshort}} Services Storage Template: \n  Other {{site.data.keyword.satelliteshort}} enabled services | Based on {{site.data.keyword.satelliteshort}} enabled service |
@@ -174,7 +174,7 @@ IBM Cloud {{site.data.keyword.satelliteshort}} is a fully managed offering hence
 | | OpenShift workload data | Customer might choose to use Cloud Object Storage on {{site.data.keyword.Bluemix_notm}} |
 | Networking |Enterprise Connectivity | |
 | | {{site.data.keyword.satelliteshort}} location and {{site.data.keyword.dl_full_notm}} 2.0 connect or internet |
-| | {{site.data.keyword.satelliteshort}} location private Network | VPN or Use {{site.data.keyword.satelliteshort}} link for TCP and HTTPS connections (no UDP)|
+| | {{site.data.keyword.satelliteshort}} location private Network | VPN or Use {{site.data.keyword.satelliteshort}} link for Transmission Control Protocol (TCP) and HTTPS connections (no User Datagram Protocol)|
 | | Cloud Connectivity | |
 | | {{site.data.keyword.satelliteshort}} location connectivity | {{site.data.keyword.satelliteshort}} link over public network
 | | {{site.data.keyword.satelliteshort}} Services Connectivity | {{site.data.keyword.satelliteshort}} link location endpoint for OpenShift cluster
