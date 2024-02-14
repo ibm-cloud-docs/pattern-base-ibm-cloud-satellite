@@ -19,7 +19,7 @@ keywords:
 <!-- below is a placeholder for all security domain decisions.    Remove the domains that are not in scope-->
 
 | Architecture decision| Requirement | Options | Decision| Rationale|
-|-|-|-|-|-|
+|---|---|---|---|---|
 |Build & Test| text | text | text | text |
 |Delivery Pipeline| text | text | text | text |
 |Code Repository| text | text | text | text |
