@@ -16,4 +16,4 @@ keywords:
 {: #resiliency-design}
 
 <!-- text for resliency design considerations goes here -->
-Resiliency is best achieved by deploying more than one IBM Cloud Satellite locations and duplicating the configuration.
+Resiliency is best achieved by deploying more than one {{site.data.keyword.satellitelong_notm}} locations and duplicating the configuration.

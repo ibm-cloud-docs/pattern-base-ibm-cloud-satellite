@@ -6,7 +6,7 @@ lastupdated: "2024-02-13"
 
 subcollection: pattern-base-ibm-cloud-satellite
 
-keywords: {{site.data.keyword.satelliteshort}}, location
+keywords: IBM Cloud Satellite, location, Satellite, base
 
 ---
 

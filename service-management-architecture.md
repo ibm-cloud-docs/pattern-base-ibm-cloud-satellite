@@ -13,14 +13,14 @@ keywords: Satellite, location
 # Architecture decisions for service management
 {: #service}
 
-The following sections summarize the architecture decisions for service management for base IBM Cloud Satellite pattern.
+The following sections summarize the architecture decisions for service management for base {{site.data.keyword.satellitelong_notm}} pattern.
 
 ## Architecture decisions for monitoring
 {: #monitoring}
 
 | Architecture decision | Requirement | Option | Decision | Rationale |
 |---|---|---|---|---|
-| 1 | Satellite Location & Hosts | - IBM Satellite Monitoring Tool \n- IBM Cloud Monitoring |	IBM Satellite Monitoring Tool | By default, IBM Cloud Satellite automatically monitors and resolves certain alerts for the Satellite location setup and host infrastructure that can be accessed through IBM Satellite Console and CLI. See [Default Monitoring for Satellite](https://cloud.ibm.com/docs/satellite?topic=satellite-monitor) for details. |
+| 1 | Satellite Location & Hosts | - IBM Satellite Monitoring Tool \n- IBM Cloud Monitoring |	IBM Satellite Monitoring Tool | By default, {{site.data.keyword.satellitelong_notm}} automatically monitors and resolves certain alerts for the Satellite location setup and host infrastructure that can be accessed through IBM Satellite Console and CLI. See [Default Monitoring for Satellite](https://cloud.ibm.com/docs/satellite?topic=satellite-monitor) for details. |
 | | | | IBM Cloud Monitoring | IBM Satellite can be integrated with a customer-owned IBM Cloud Monitoring instance enabled for platform-level metrics to provide more detailed metrics. The Monitoring instance can be configured to collect metrics for both the Satellite location and Satellite-enabled services running in the Satellite location. |
 | 2 | OpenShift Clusters | - Prometheus & Grafana on OpenShift \n- IBM Cloud Monitoring \n- Customer Monitoring Tool | IBM Cloud Monitoring | Manually deploy monitoring agents in OpenShift clusters to forward metrics to a customer-owned IBM Cloud Monitoring instance and get unified views of metrics for OpenShift clusters and other cloud services running at the Satellite location and within the Satellite managed-from region.  See [Setting up Monitoring for Clusters](https://cloud.ibm.com/docs/satellite?topic=satellite-monitor) for details. |
 {: caption="Table 1. Architecture decisions for monitoring" caption-side="bottom"}
@@ -40,6 +40,6 @@ The following sections summarize the architecture decisions for service manageme
 
 | Architecture decision | Requirement | Option | Decision | Rationale |
 |---|---|---|---|---|
-| 1 | Satellite Location Events | IBM Cloud Activity Tracker | IBM Cloud Activity Tracker | Customer-owned IBM Cloud Activity Tracker instance for IBM Cloud Satellite to forward audit events. IBM Cloud Activity Tracker tracks how users and applications interact with IBM Cloud Satellite. It can be used to investigate abnormal activity and critical actions and to comply with regulatory audit requirements. See [Auditing events for Satellite](https://cloud.ibm.com/docs/satellite?topic=satellite-at_events). |
+| 1 | Satellite Location Events | IBM Cloud Activity Tracker | IBM Cloud Activity Tracker | Customer-owned IBM Cloud Activity Tracker instance for {{site.data.keyword.satellitelong_notm}} to forward audit events. IBM Cloud Activity Tracker tracks how users and applications interact with {{site.data.keyword.satellitelong_notm}}. It can be used to investigate abnormal activity and critical actions and to comply with regulatory audit requirements. See [Auditing events for Satellite](https://cloud.ibm.com/docs/satellite?topic=satellite-at_events). |
 | 2 | OpenShift Clusters | - IBM Cloud Activity Tracker \n- Customer tool | IBM Cloud Activity Tracker | Red Hat OpenShift on IBM Cloud automatically generates cluster management events and forwards these event logs to a customer-owned IBM Cloud Activity Tracker instance. See [Events for Satellite Clusters](https://cloud.ibm.com/docs/satellite?topic=satellite-at_events). |
 {: caption="Table 3. Architecture decisions for auditing" caption-side="bottom"}

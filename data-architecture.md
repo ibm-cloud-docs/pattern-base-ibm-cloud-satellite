@@ -18,7 +18,7 @@ keywords: Satellite, location
 <!-- Below is a placeholder for all compute domain decisions.  Remove the domains that are not in scope.  If there are decisions
 that need to be added (e.g. platform dependent) add additional rows-->
 
-The following tables summarize the data architecture decisions for the IBM Cloud Satellite base pattern.
+The following tables summarize the data architecture decisions for the {{site.data.keyword.satellitelong_notm}} base pattern.
 
 ## Architecture decisions for data
 {: #data-residency}
