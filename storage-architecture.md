@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024
-lastupdated: "2024-1-8"
+lastupdated: "2024-02-13"
 
 subcollection: pattern-base-ibm-cloud-satellite
 
@@ -15,14 +15,11 @@ keywords: Satellite, location
 # Architecture decisions for storage
 {: #storage-decisions}
 
-The following sections summarize the storage architecture decisions for base IBM Cloud Satellite pattern.
-
-<!-- Below is a placeholder for all compute domain decisions.  Remove the domains that are not in scope.  If there are decisions
-that need to be added (e.g. platform dependent) add additional rows-->
+The following sections summarize the storage architecture decisions for the base {{site.data.keyword.satellitelong}} pattern.
 
 | Architecture decision| Requirement| Option | Decision| Rationale|
 |---|---|---|---|---|
-| Satellite Hosts | Satellite Hosts: Control Plane | -  Host node local storage \n- Remote storage | Host node local storage | Virtual Machine disks: minimum 10 GB Boot disk (25 GB is recommended) plus 100 GB secondary disk (unformatted). For more details see [Satellite Host Storage Requirements](https://cloud.ibm.com/docs/satellite?topic=satellite-reqs-host-storage) |
+| Satellite hosts | Satellite hosts: Control plane | -  Host node local storage \n- Remote storage | Host node local storage | Virtual Machine disks: minimum 10 GB Boot disk (25 GB is recommended) plus 100 GB secondary disk (unformatted). For more details see [Satellite Host Storage Requirements](https://cloud.ibm.com/docs/satellite?topic=satellite-reqs-host-storage) |
 |  | Satellite Hosts: Worker Nodes | -  Host node local storage \n- Remote storage  | Host node local storage | Virtual Machine disks: minimum 10 GB Boot disk (25 GB is recommended) plus 100 GB secondary disk (unformatted). Additional disks/size depend on storage requirements for satellite-enabled services running in the Satellite Location. See AD for Satellite Enabled Services. See [Satellite Host Storage Requirements](https://cloud.ibm.com/docs/satellite?topic=satellite-reqs-host-storage) |
 | Storage | Satellite Services Storage: OpenShift (Customer Workloads) | -  File Storage \n- Block Storage \n- Object Storage \n- Software Defined Storage (SDS) | Software Defined Storage (SDS) | SDS for container environments provide highly available and scalable storage and support file, block, and cloud object storage types to meet the requirements of various containerized workloads. |
 | | Software Defined Storage | -  OpenShift Data Foundation (ODF) \n- Portworx Enterprise | OpenShift Data Foundation (ODF) | SDS for container environments that supports file, block, and object storage types, high availability and data replication and encryption. Storage template available for integration/use with satellite-enabled services. |
