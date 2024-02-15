@@ -24,7 +24,7 @@ In this guide, you can find the useful information about the configuration of a 
 
 The pattern follows the {{site.data.keyword.IBM}} architecture framework and provides a solution design from the standard {{site.data.keyword.Bluemix_notm}} deployment architecture for these two facets of a solution:
 
-- Managed from: The managed from environment is {{site.data.keyword.Bluemix_notm}}
+- Managed from: The managed from environment is {{site.data.keyword.Bluemix_notm}}.
 - Managed to: The managed to environment is the {{site.data.keyword.satelliteshort}} location.
 
 In addition, you can find a prescriptive, end to end enterprise-class solution design, with diagrams and component architecture decisions for each of the three {{site.data.keyword.satelliteshort}} locations.
