@@ -19,7 +19,7 @@ keywords:
 Some of the key requirements from a network perspective:
 - Hosts must have minimum network bandwidth connectivity of 100 Mbps, with 1 Gbps preferred.
 - Host IP addresses must remain static and cannot change over time.
-- All Satellite hosts must have an IPv4 address since Satellite does not support IPv6. See (https://cloud.ibm.com/docs/satellite?topic=satellite-reqs-host-network).
+- All {{site.data.keyword.satelliteshort}} hosts must have an IPv4 address since {{site.data.keyword.satelliteshort}} does not support IPv6. See (https://cloud.ibm.com/docs/{{site.data.keyword.satelliteshort}}?topic=satellite-reqs-host-network).
 
 
 The table shows IP address ranges that are reserved for {{site.data.keyword.satellitelong_notm}} and should not be used for any other purpose.
