@@ -33,7 +33,7 @@ content-type: reference-architecture
 {{site.data.keyword.attribute-definition-list}}
 
 
-# Base {{site.data.keyword.satellitelong_notm}} 
+# Base {{site.data.keyword.satellitelong_notm}}
 {: #base-ibm-cloud-satellite}
 {: toc-content-type="reference-architecture"}
 {: toc-use-case="Managed cloud"}
@@ -92,7 +92,7 @@ In Figure 3, you can view the domains that are relevant in an {{site.data.keywor
 ## Solution components and requirements for {{site.data.keyword.satelliteshort}} location on-premises
 {: #solution-components-on-prem}
 
-Review the following requirements and components for an on-premises {{site.data.keyword.satelliteshort}} location.  
+Review the following requirements and components for an on-premises {{site.data.keyword.satelliteshort}} location.
 
 ### Requirements
 {: #requirements}
@@ -102,8 +102,8 @@ The following table represents a baseline set of requirements, which are applica
 | Aspect | Requirement |
 |---|---|
 | Compute | Customer uses the VMs that are on-premises as the hosts in {{site.data.keyword.satelliteshort}} location. |
-| | Customer is looking to use CoreOS |
-| Storage | Provide storage that meets the application and database performance requirements. |
+| | Customer is looking to use Red Hat CoreOS (RCOS) in the {{site.data.keyword.satelliteshort}} location host machines |
+| Storage | Provide storage that meets the customer application and database performance requirements. |
 | Network | - Provide secure, encrypted connectivity from {{site.data.keyword.satelliteshort}} location to {{site.data.keyword.Bluemix_notm}}. \n - Customer has Direct Link. Use DL to connect {{site.data.keyword.Bluemix_notm}} to hosts in {{site.data.keyword.satelliteshort}} Location. \n - Access customer's existing Red Hat Container Registry.  |
 | Data | Data residency requirements require that the customer’s data not leave the region. |
 | Security | - Encrypt all application data in transit and at rest to protect it from unauthorized disclosure. \n - Customer would like to use their Hardware Security Module (HSM). \n Note: The HSM owner is responsible for its connectivity, monitoring, and integration with Key Protect. \n - Encrypt all data by using customer-managed keys to meet regulatory compliance requirements for more security and customer control. |
@@ -211,11 +211,20 @@ The following table represents a baseline set of requirements, which are applica
 ## Solution components for hybrid {{site.data.keyword.satelliteshort}} locations
 {#components-hybrid}
 
-In addition to the components listed in the {{site.data.keyword.satelliteshort}} location on-premises pattern, there are hyperscaler-related components: 
+In addition to the components listed in the {{site.data.keyword.satelliteshort}} location on-premises pattern, there are hyperscaler-related components:
 
 - Hyperscaler infrastructure
 - Hyperscaler specific Container Registry
 - Direct network connection between {{site.data.keyword.satelliteshort}} location and {{site.data.keyword.Bluemix_notm}}
 - Hyperscaler specific activity tracker
+
+The table has links that provide additional information about configuring {{site.data.keyword.satelliteshort}} location in a hyperscaler or VMware.
+| Hyperscaler | Link |
+|---|---|
+| AWS | https://cloud.ibm.com/docs/satellite?topic=satellite-loc-aws-create-auto |
+| Azure | https://cloud.ibm.com/docs/satellite?topic=satellite-loc-azure-create-auto |
+| GCP | https://cloud.ibm.com/docs/satellite?topic=satellite-loc-gcp-create-auto |
+| VMware | https://cloud.ibm.com/docs/satellite?topic=satellite-loc-vmware-create-auto |
+{: caption="Table 4. {{site.data.keyword.satelliteshort}} location in a Hyperscaler or VMware" caption-side="bottom"}
 
 The architecture framework is used to guide and determine the applicable aspects and domains for which architecture decisions need to be made. Review the design considerations and architecture decisions for the aspects and domains that are in play in this solution pattern.
