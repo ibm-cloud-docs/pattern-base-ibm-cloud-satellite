@@ -153,15 +153,14 @@ The following table represents a baseline set of requirements, which are applica
 | | Workloads Access | - Red Hat OpenShift Routes \n - Node Ports \n - There is the ability to integrate external load balancers, just point load balancer to the Red Hat OpenShift router node port. {: note} |
 | | Workload isolation | Single cluster for all workloads |
 | | Container Images Registry | {{site.data.keyword.registrylong_notm}} on {{site.data.keyword.Bluemix_notm}} |
-| Storage | Primary | |
-| | {{site.data.keyword.satelliteshort}} Hosts: Control plane and worker nodes host node local storage
+| Storage: Primary | {{site.data.keyword.satelliteshort}} Hosts: Control plane and worker nodes host node local storage
 | | {{site.data.keyword.satelliteshort}} Services storage: \n Red Hat OpenShift (Customer Workloads) | Software Defined Storage (SDS) |
 | | Software Defined Storage | - Red Hat OpenShift Data Foundation\n - Portworx enterprise (if customer is an existing Portworx user) |
 | | Portworx enterprise storage | Worker node host local disks |
 | | {{site.data.keyword.satelliteshort}} services storage template: \n Red Hat OpenShift | Bring your Own Driver: Portworx |
 | | {{site.data.keyword.satelliteshort}} Services Storage Template: \n Other {{site.data.keyword.satelliteshort}} enabled services | Based on {{site.data.keyword.satelliteshort}} enabled service |
-| | Backup | |
-| | {{site.data.keyword.satelliteshort}} Control Plane Data | {{site.data.keyword.cos_full_notm}} (IBM-managed backups) |
+| | | |
+| Storage: Backup | {{site.data.keyword.satelliteshort}} Control Plane Data | {{site.data.keyword.cos_full_notm}} (IBM-managed backups) |
 | | Red Hat OpenShift workload data | Customer might choose to use Cloud Object Storage on {{site.data.keyword.Bluemix_notm}} |
 | Networking |Enterprise Connectivity | |
 | | {{site.data.keyword.satelliteshort}} location and {{site.data.keyword.dl_full_notm}} 2.0 connect or internet |
@@ -175,34 +174,28 @@ The following table represents a baseline set of requirements, which are applica
 | | Segmentation | |
 | | Red Hat OpenShift cluster | Container network policies |
 | | DNS | Client DNS at {{site.data.keyword.satelliteshort}} location |
-| Security: Data | Encryption at rest	| |
-| | {{site.data.keyword.satelliteshort}} control plane backup storage | Cloud Object Storage encrypted with provider keys |
+| Security: Data | | |
+| Data encryption at rest | {{site.data.keyword.satelliteshort}} control plane backup storage | Cloud Object Storage encrypted with provider keys |
 | | {{site.data.keyword.satelliteshort}} worker nodes data | Worker nodes storage encryption: Customer |
 | | Red Hat OpenShift cluster persistent storage | Cluster volume encryption with Kubernetes Secret |
-| | Encryption in Transit	| |
-| | {{site.data.keyword.satelliteshort}} Link | Encryption that uses TLS |
+| Data encyption in transit | {{site.data.keyword.satelliteshort}} Link | Encryption that uses TLS |
 | | Red Hat OpenShift cluster workloads | App-level encryption that uses TLS |
 | | Certificate Lifecycle Management | Customer on-premises certificate manager |
-| Security: Identity and Access Management (IAM) | Access and role management	| |
-| |	{{site.data.keyword.satelliteshort}} Location | - {{site.data.keyword.Bluemix_notm}} account set up \n - Account and Resource Organization \n - {{site.data.keyword.Bluemix_notm}} IAM roles and access groups |
+| Security: Identity and Access Management (IAM) | | |
+| IAM: Access & Role Management |	{{site.data.keyword.satelliteshort}} Location | - {{site.data.keyword.Bluemix_notm}} account set up \n - Account and Resource Organization \n - {{site.data.keyword.Bluemix_notm}} IAM roles and access groups |
 | | {{site.data.keyword.satelliteshort}} location hosts | {{site.data.keyword.Bluemix_notm}} IAM | |
 | | {{site.data.keyword.satelliteshort}} services: \n Red Hat OpenShift (Customer Workloads Cluster) | - {{site.data.keyword.Bluemix_notm}} IAM Roles \n - Kubernetes role-based access control (RBAC) Roles |
-| | Application: Runtime security (WAF and DDoS) | Bring your own Edge Security | |
-| | Infrastructure and endpoint: Core Network Protection | Subnets and firewall rules | |
-| | Threat detection and response: Threat detection | Customer SIEM tool, for example, Splunk | |
-| Resiliency | High availability | |
-| | {{site.data.keyword.satelliteshort}} Host Nodes (control and worker nodes) | Multi-zone deployment | |
+| IAM: Application | Runtime security (WAF and DDoS) | Bring your own Edge Security | |
+| IAM: Infrastructure & endpoint | Core Network Protection | Subnets and firewall rules | |
+| IAM: Threat detection and response | Threat detection | Customer SIEM tool, for example, Splunk | |
+| Resiliency: High availability | {{site.data.keyword.satelliteshort}} Host Nodes (control and worker nodes) | Multi-zone deployment | |
 | | Red Hat OpenShift workloads | Multi-zone Red Hat OpenShift cluster | |
-| | Resiliency: Backup | |
-| | Red Hat OpenShift clusters | Portworx PX Backup for Kubernetes | |
-| Service management | Monitoring | |
-| | {{site.data.keyword.satelliteshort}} location and hosts | - IBM {{site.data.keyword.satelliteshort}} Monitoring Tool \n - {{site.data.keyword.monitoringlong_notm}} | |
+| Resiliency: Backup | Red Hat OpenShift clusters | Portworx PX Backup for Kubernetes | |
+| Service management: Monitoring | {{site.data.keyword.satelliteshort}} location and hosts | - IBM {{site.data.keyword.satelliteshort}} Monitoring Tool \n - {{site.data.keyword.monitoringlong_notm}} | |
 | | Red Hat OpenShift clusters | {{site.data.keyword.monitoringlong_notm}} | |
-| | Logging	| |
-| | {{site.data.keyword.satelliteshort}} location and hosts | - IBM {{site.data.keyword.satelliteshort}} {{site.data.keyword.loganalysisshort}} tool \n - {{site.data.keyword.loganalysislong}} |
+| Service management: Logging | {{site.data.keyword.satelliteshort}} location and hosts | - IBM {{site.data.keyword.satelliteshort}} {{site.data.keyword.loganalysisshort}} tool \n - {{site.data.keyword.loganalysislong}} |
 | | Red Hat OpenShift clusters | {{site.data.keyword.loganalysislong_notm}} |
-| | Auditing | |
-| | {{site.data.keyword.satelliteshort}}e location events | {{site.data.keyword.cloudaccesstraillong}} |
+| Service management: Auditing | {{site.data.keyword.satelliteshort}}e location events | {{site.data.keyword.cloudaccesstraillong}} |
 | | Red Hat OpenShift clusters | {{site.data.keyword.cloudaccesstraillong}} |
 {: caption="Table 3. Components" caption-side="bottom"}
 
