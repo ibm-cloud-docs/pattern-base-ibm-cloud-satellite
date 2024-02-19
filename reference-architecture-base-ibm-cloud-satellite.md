@@ -80,11 +80,9 @@ The base {{site.data.keyword.satellitelong_notm}} solution covers design conside
 
 - **Service Management:** Monitoring, Logging, Auditing/Tracking
 
-The [Introduction to the architecture framework](https://cloud.ibm.com/docs/architecture-framework?topic=architecture-framework-intro), provides a consistent approach to design cloud solutions by addressing requirements across a pre-defined set of aspects and domains, which are technology-agnostic architectural areas to consider for any enterprise solution. It can be used as a guide to make the necessary design and component choices. After you have identified the applicable requirements and domains that are in scope, you can evaluate and select the best fit for purpose components for your enterprise cloud solution.
+The [Introduction to the architecture framework](/docs/architecture-framework?topic=architecture-framework-intro), provides a consistent approach to design cloud solutions by addressing requirements across a pre-defined set of aspects and domains, which are technology-agnostic architectural areas to consider for any enterprise solution. It can be used as a guide to make the necessary design and component choices. After you have identified the applicable requirements and domains that are in scope, you can evaluate and select the best fit for purpose components for your enterprise cloud solution.
 
 In Figure 3, you can view the domains that are relevant in an {{site.data.keyword.satellitelong_notm}} solution.
-
-<!-- use the draw.io framework template to create your heatmap image, located here https://ibm.ent.box.com/file/1389368500379 -->
 
 ![Base {{site.data.keyword.satelliteshort}} architecture framework](/images/Base-Satellite-AF.svg){: caption="Figure 3. Base {{site.data.keyword.satellitelong_notm}} Architecture Framework" caption-side="bottom"}
 
@@ -221,10 +219,10 @@ In addition to the components listed in the {{site.data.keyword.satelliteshort}}
 The table has links that provide additional information about configuring {{site.data.keyword.satelliteshort}} location in a hyperscaler or VMware.
 | Hyperscaler | Link |
 |---|---|
-| AWS | https://cloud.ibm.com/docs/satellite?topic=satellite-loc-aws-create-auto |
-| Azure | https://cloud.ibm.com/docs/satellite?topic=satellite-loc-azure-create-auto |
-| GCP | https://cloud.ibm.com/docs/satellite?topic=satellite-loc-gcp-create-auto |
-| VMware | https://cloud.ibm.com/docs/satellite?topic=satellite-loc-vmware-create-auto |
+| AWS | [Automating your AWS location setup with a Schematics template](/docs/satellite?topic=satellite-loc-aws-create-auto) |
+| Azure | [Automating your Azure location setup with a Schematics template](/docs/satellite?topic=satellite-loc-azure-create-auto) |
+| GCP | [Automating your GCP location setup with a Schematics template](/docs/satellite?topic=satellite-loc-gcp-create-auto) |
+| VMware | [Automating your VMware location setup with a Schematics template](/docs/satellite?topic=satellite-loc-vmware-create-auto) |
 {: caption="Table 4. {{site.data.keyword.satelliteshort}} location in a Hyperscaler or VMware" caption-side="bottom"}
 
 The architecture framework is used to guide and determine the applicable aspects and domains for which architecture decisions need to be made. Review the design considerations and architecture decisions for the aspects and domains that are in play in this solution pattern.
