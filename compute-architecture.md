@@ -15,7 +15,7 @@ keywords: IBM Cloud Satellite, location, Satellite, base
 # Architecture decisions for compute
 {: #compute-decisions}
 
-The following sections summarize the compute architecture decisions for the base {{site.data.keyword.satellitelong}} pattern.
+The following sections summarize the compute architecture decisions for the deployment of {{site.data.keyword.satelliteshort}} on-premises or in hyperscaler pattern.
 
 <!-- below is a placeholder for all compute domain decisions  Remove the domains that are not in scope.  If there are decisions that need to be added (e.g. platform dependent) add additional rows-->
 
