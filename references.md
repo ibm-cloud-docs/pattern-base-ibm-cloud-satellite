@@ -15,7 +15,7 @@ keywords:
 # References
 {: #references}
 
-Review the following references to guide you through the {{site.data.keyword.satellitelong}} pattern.
+Review the following references to guide you through the {{site.data.keyword.satelliteshort}} on-premises or in hyperscaler pattern.
 
 [{{site.data.keyword.satellitelong_notm}} docs](/docs/satellite?topic=satellite-service-architecture)
 
