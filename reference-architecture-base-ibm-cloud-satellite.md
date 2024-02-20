@@ -33,13 +33,13 @@ content-type: reference-architecture
 {{site.data.keyword.attribute-definition-list}}
 
 
-# Base {{site.data.keyword.satellitelong_notm}}
+# Deploy Satellite on-premises or in hyperscaler
 {: #base-ibm-cloud-satellite}
 {: toc-content-type="reference-architecture"}
 {: toc-use-case="Managed cloud"}
 {: toc-version="1.0"}
 
-The Base {{site.data.keyword.satellitelong_notm}} includes two common solution patterns:
+The B{{site.data.keyword.satelliteshort}} on-premises or in hyperscaler two common solution patterns:
 - One or more {{site.data.keyword.satellitelong_notm}} locations configured on-premises
 - One {{site.data.keyword.satelliteshort}} location is configured on-premises, and another {{site.data.keyword.satelliteshort}} location is configured in the cloud
 
