@@ -15,7 +15,7 @@ keywords: Satellite, location
 # Architecture decisions for networking
 {: #networking-architecture}
 
-The following tables summarize the networking architecture decisions for the {{site.data.keyword.satellitelong_notm}} base pattern.
+The following tables summarize the networking architecture decisions for the deployment of Satellite on-premises or in hyperscaler.
 
 ## Architecture decisions for enterprise connectivity
 {: #enterprise-connectivity}
