@@ -16,7 +16,7 @@ keywords: Satellite, location
 <!-- below is a placeholder for all compute domain decisions  Remove the domains that are not in scope.  If there are decisions
 that need to be added (e.g. platform dependent) add additional rows-->
 
-The following are security architecture decisions for the base {{site.data.keyword.satellitelong_notm}} pattern.
+The following are security architecture decisions for the deployment of Satellite on-premises or in hyperscaler pattern.
 
 ## Architecture decisions for data encryption
 {: #data-encryption}
