@@ -13,7 +13,7 @@ keywords: Satellite, location
 # Architecture decisions for service management
 {: #service}
 
-The following sections summarize the architecture decisions for service management for base {{site.data.keyword.satellitelong_notm}} pattern.
+The following sections summarize the architecture decisions for service management for the deployment of Satellite on-premises or in hyperscaler pattern.
 
 ## Architecture decisions for monitoring
 {: #monitoring}
