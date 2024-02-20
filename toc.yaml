@@ -13,7 +13,7 @@ toc:
     href: /docs/pattern-base-ibm-cloud-satellite
     path: pattern-base-ibm-cloud-satellite
     description: Deployment considerations for IBM Cloud Satellite with on-premises Satellite location and hybrid Satellite locations
-    label: Base Satellite
+    label: Deploy Satellite on-premises or in hyperscaler
 
   entries:
   - navgroup:

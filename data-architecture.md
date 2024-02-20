@@ -15,7 +15,7 @@ keywords: Satellite, location
 # Architecture decisions for data
 {: #data-architecture}
 
-The following tables summarize the data architecture decisions for the {{site.data.keyword.satellitelong_notm}} base pattern.
+The following tables summarize the data architecture decisions for the deployment of Satellite on-premises or in hyperscaler pattern.
 
 ## Architecture decisions for data
 {: #data-residency}
