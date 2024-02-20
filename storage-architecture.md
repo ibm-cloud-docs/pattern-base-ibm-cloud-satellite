@@ -15,7 +15,7 @@ keywords: Satellite, location
 # Architecture decisions for storage
 {: #storage-decisions}
 
-The following sections summarize the storage architecture decisions for the base {{site.data.keyword.satellitelong}} pattern.
+The following sections summarize the storage architecture decisions for the deployment of Satellite on-premises or in hyperscaler pattern.
 
 | Architecture decision| Requirement| Option | Decision| Rationale|
 |---|---|---|---|---|
