@@ -13,7 +13,7 @@ keywords: Satellite, location
 # Architecture decisions for resiliency
 {: #resiliency-architecture}
 
-The following sections summarize the resiliency architecture decisions for base {{site.data.keyword.satellitelong_notm}} pattern.
+The following sections summarize the resiliency architecture decisions for the deployment of {{site.data.keyword.satelliteshort}} on-premises or in hyperscaler pattern.
 
 ## Architecture decisions for high availability
 {: #high-availability}
