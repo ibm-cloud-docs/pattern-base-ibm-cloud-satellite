@@ -18,7 +18,7 @@ keywords: Satellite, location
 <!-- Note to author>    THIS SHOULD BE ABOUT 10 – 15 LINES AND FOLLOW….
 The objective of this pattern is to provide a solution design for……. -->
 
-The objective of this document is to provide a solution design for the deployment of {{site.data.keyword.satellitelong}} with one or more {{site.data.keyword.satelliteshort}} locations. {{site.data.keyword.satelliteshort}} is a software platform that creates managed cloud services across any environment. 
+The objective of this document is to provide a solution design for the deployment Satellite on-premises or in hyperscaler. {{site.data.keyword.satelliteshort}} is a software platform that creates managed cloud services across any environment. 
 
 In this guide, you can find the useful information about the configuration of a {{site.data.keyword.satelliteshort}} location that can be either on-premises, in {{site.data.keyword.Bluemix_short}}, or within any other cloud.
 
