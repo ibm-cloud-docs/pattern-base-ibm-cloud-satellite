@@ -2,9 +2,9 @@
 
 copyright:
     years: 2024
-lastupdated: "2024-02-08"
+lastupdated: "2024-03-06"
 
-keywords: # Not typically populated
+keywords: base satellite, reference arch, architecture diagram
 
 subcollection: pattern-base-ibm-cloud-satellite
 
@@ -39,7 +39,7 @@ content-type: reference-architecture
 {: toc-use-case="Managed cloud"}
 {: toc-version="1.0"}
 
-The {{site.data.keyword.satelliteshort}} on-premises or in hyperscaler two common solution patterns:
+The {{site.data.keyword.satelliteshort}} on-premises or in hyperscaler pattern includes two common solution patterns:
 - One or more {{site.data.keyword.satellitelong_notm}} locations configured on-premises
 - One {{site.data.keyword.satelliteshort}} location is configured on-premises, and another {{site.data.keyword.satelliteshort}} location is configured in the cloud
 
@@ -55,30 +55,32 @@ Figure 1 illustrates the {{site.data.keyword.satellitelong_notm}} architecture w
 
 {{site.data.keyword.satelliteshort}} link connects on-premises {{site.data.keyword.satelliteshort}} locations to {{site.data.keyword.Bluemix_notm}}. Customers might also choose to use Direct Link. Red Hat OpenShift and Red Hat OpenShift Data Foundation are two of the many other {{site.data.keyword.satelliteshort}}-enabled services in this image that are deployed in the {{site.data.keyword.satelliteshort}} location.
 
+<!--
 Figure 2 illustrates the hybrid {{site.data.keyword.satellitelong_notm}} architecture where one or more {{site.data.keyword.satelliteshort}} locations are deployed on-premises and the other {{site.data.keyword.satelliteshort}} location is deployed in another cloud. The figure shows AWS as the hyperscaler.
 
 ![Satellite location hybrid architecture](/images/SatLoc-hybrid-architecture.svg){: caption="Figure 2. Base {{site.data.keyword.satellitelong_notm}} Solution Architecture with Hybrid Satellite locations" caption-side="bottom"}
 
 A {{site.data.keyword.satelliteshort}} location can be created in {{site.data.keyword.Bluemix_notm}}, AWS, Azure, or Google. In this example one location is shown on AWS, while the other {{site.data.keyword.satelliteshort}} location is on-premises.
+-->
 
 ## Design scope
 {: #design-scope}
 
 The base {{site.data.keyword.satellitelong_notm}} solution covers design considerations and architecture decisions for the following aspects and domains:
 
-- **Compute:** Bare Metal, Virtual Servers, Virtualization, Containers
+- **[Compute](/docs/pattern-base-ibm-cloud-satellite?topic=pattern-base-ibm-cloud-satellite-compute-design):** Bare Metal, Virtual Servers, Virtualization, Containers
 
-- **Storage:** Primary Storage, Backup Storage
+- **[Storage](/docs/pattern-base-ibm-cloud-satellite?topic=pattern-base-ibm-cloud-satellite-storage-design):** Primary Storage, Backup Storage
 
-- **Networking:** Enterprise Connectivity, Network Segmentation
+- **[Networking](/docs/pattern-base-ibm-cloud-satellite?topic=pattern-base-ibm-cloud-satellite-networking-design):** Enterprise Connectivity, Network Segmentation
 
-- **Data:** Data Storage (highlighting the Data Residency requirement)
+- **[Data](/docs/pattern-base-ibm-cloud-satellite?topic=pattern-base-ibm-cloud-satellite-data-design):** Data Storage (highlighting the Data Residency requirement)
 
-- **Security:** Data Security, Identity and Access Management, Infrastructure and Endpoint
+- **[Security](/docs/pattern-base-ibm-cloud-satellite?topic=pattern-base-ibm-cloud-satellite-data-design):** Data Security, Identity and Access Management, Infrastructure and Endpoint
 
-- **Resiliency:** Backup and Restore, High Availability
+- **[Resiliency](/docs/pattern-base-ibm-cloud-satellite?topic=pattern-base-ibm-cloud-satellite-resiliency-design):** Backup and Restore, High Availability
 
-- **Service Management:** Monitoring, Logging, Auditing/Tracking
+- **[Service Management](/docs/pattern-base-ibm-cloud-satellite?topic=pattern-base-ibm-cloud-service-management-design):** Monitoring, Logging, Auditing/Tracking
 
 The [Introduction to the architecture framework](/docs/architecture-framework?topic=architecture-framework-intro), provides a consistent approach to design cloud solutions by addressing requirements across a pre-defined set of aspects and domains, which are technology-agnostic architectural areas to consider for any enterprise solution. It can be used as a guide to make the necessary design and component choices. After you have identified the applicable requirements and domains that are in scope, you can evaluate and select the best fit for purpose components for your enterprise cloud solution.
 
@@ -100,7 +102,7 @@ The following table represents a baseline set of requirements, which are applica
 | Aspect | Requirement |
 |---|---|
 | Compute | Customer uses the VMs that are on-premises as the hosts in {{site.data.keyword.satelliteshort}} location. |
-| | Customer is looking to use Red Hat CoreOS (RCOS) in the {{site.data.keyword.satelliteshort}} location host machines |
+| | Customer is looking to use Red Hat CoreOS (RHCOS) in the {{site.data.keyword.satelliteshort}} location host machines |
 | Storage | Provide storage that meets the customer application and database performance requirements. |
 | Network | - Provide secure, encrypted connectivity from {{site.data.keyword.satelliteshort}} location to {{site.data.keyword.Bluemix_notm}}. \n - Customer has Direct Link. Use DL to connect {{site.data.keyword.Bluemix_notm}} to hosts in {{site.data.keyword.satelliteshort}} Location. \n - Access customer's existing Red Hat Container Registry.  |
 | Data | Data residency requirements require that the customer’s data not leave the region. |
