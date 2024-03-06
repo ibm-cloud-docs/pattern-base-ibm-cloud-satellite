@@ -1,10 +1,10 @@
----
+--
 
 copyright:
     years: 2024
 lastupdated: "2024-03-06"
 
-keywords: base satellite, reference arch, architecture diagram
+keywords: base satellite architecture, architecture diagram
 
 subcollection: pattern-base-ibm-cloud-satellite
 
@@ -84,9 +84,9 @@ The base {{site.data.keyword.satellitelong_notm}} solution covers design conside
 
 The [Introduction to the architecture framework](/docs/architecture-framework?topic=architecture-framework-intro), provides a consistent approach to design cloud solutions by addressing requirements across a pre-defined set of aspects and domains, which are technology-agnostic architectural areas to consider for any enterprise solution. It can be used as a guide to make the necessary design and component choices. After you have identified the applicable requirements and domains that are in scope, you can evaluate and select the best fit for purpose components for your enterprise cloud solution.
 
-In Figure 3, you can view the domains that are relevant in an {{site.data.keyword.satellitelong_notm}} solution.
+In Figure 2, you can view the domains that are relevant in an {{site.data.keyword.satellitelong_notm}} solution.
 
-![Base {{site.data.keyword.satelliteshort}} architecture framework](/images/Base-Satellite-AF.svg){: caption="Figure 3. Base {{site.data.keyword.satellitelong_notm}} Architecture Framework" caption-side="bottom"}
+![Base {{site.data.keyword.satelliteshort}} architecture framework](/images/Base-Satellite-AF.svg){: caption="Figure 2. Base {{site.data.keyword.satellitelong_notm}} Architecture Framework" caption-side="bottom"}
 
 
 ## Solution components and requirements for {{site.data.keyword.satelliteshort}} location on-premises
@@ -97,7 +97,7 @@ Review the following requirements and components for an on-premises {{site.data.
 ### Requirements
 {: #requirements}
 
-The following table represents a baseline set of requirements, which are applicable to many clients and critical to a successful {{site.data.keyword.satellitelong_notm}} deployment.
+The following table represents a baseline set of requirements, which are applicable to many clients and critical to a successful {{site.data.keyword.satellitelong_notm}} on-premises deployment.
 
 | Aspect | Requirement |
 |---|---|
@@ -148,7 +148,7 @@ The following table represents a baseline set of requirements, which are applica
 | Compute | {{site.data.keyword.satelliteshort}} location hosts | Virtual machine (VM) or {{site.data.keyword.baremetal_short_sing}} |
 | | Host OS | RHEL 8.x or RHCOS |
 | | Control plane hosts	| 4 vCPU and 16 GB RAM |
-| | {{site.data.keyword.satelliteshort}} services worker nodes hosts: \n Red Hat OpenShift (Customer Workload Cluster) | - 16 vCPU and 64 GB RAM (minimum of 3spares) for Red Hat OpenShift Data Foundation persistent storage. \n - Regular nodes that are tailored to workload but can be as low as 4x16 |
+| | {{site.data.keyword.satelliteshort}} services worker nodes hosts: \n Red Hat OpenShift (Customer Workload Cluster) | - 16 vCPU and 64 GB RAM (minimum of 3 spares) for Red Hat OpenShift Data Foundation persistent storage. \n - Regular nodes that are tailored to workload but can be as low as 4x16 |
 | | {{site.data.keyword.satelliteshort}} services worker nodes hosts : \n Other {{site.data.keyword.satelliteshort}}-enabled services | Based on {{site.data.keyword.satelliteshort}}-enabled service. This reference solution does not include any other services. |
 | | Containers | Managed Red Hat OpenShift on {{site.data.keyword.satelliteshort}} |
 | | Red Hat OpenShift cluster connectivity | - Private Service cluster URL \n - Public Domain Name System (DNS) pointing to control plane node IPs by default \n - Private {{site.data.keyword.satelliteshort}} link endpoint for Red Hat OpenShift cluster accessible within {{site.data.keyword.Bluemix_notm}} private network  |
@@ -157,11 +157,7 @@ The following table represents a baseline set of requirements, which are applica
 | | Container Images Registry | {{site.data.keyword.registrylong_notm}} on {{site.data.keyword.Bluemix_notm}} |
 | Storage: Primary | {{site.data.keyword.satelliteshort}} Hosts: Control plane and worker nodes host node local storage
 | | {{site.data.keyword.satelliteshort}} Services storage: \n Red Hat OpenShift (Customer Workloads) | Software Defined Storage (SDS) |
-| | Software Defined Storage | - Red Hat OpenShift Data Foundation\n - Portworx enterprise (if customer is an existing Portworx user) |
-| | Portworx enterprise storage | Worker node host local disks |
-| | {{site.data.keyword.satelliteshort}} services storage template: \n Red Hat OpenShift | Bring your Own Driver: Portworx |
-| | {{site.data.keyword.satelliteshort}} Services Storage Template: \n Other {{site.data.keyword.satelliteshort}} enabled services | Based on {{site.data.keyword.satelliteshort}} enabled service |
-| | | |
+| | Software Defined Storage | Red Hat OpenShift Data Foundation |
 | Storage: Backup | {{site.data.keyword.satelliteshort}} Control Plane Data | {{site.data.keyword.cos_full_notm}} (IBM-managed backups) |
 | | Red Hat OpenShift workload data | Customer might choose to use Cloud Object Storage on {{site.data.keyword.Bluemix_notm}} |
 | Networking |Enterprise Connectivity | |
@@ -190,8 +186,8 @@ The following table represents a baseline set of requirements, which are applica
 | IAM: Application | Runtime security (WAF and DDoS) | Bring your own Edge Security | |
 | IAM: Infrastructure & endpoint | Core Network Protection | Subnets and firewall rules | |
 | IAM: Threat detection and response | Threat detection | Customer SIEM tool, for example, Splunk | |
-| Resiliency: High availability | {{site.data.keyword.satelliteshort}} Host Nodes (control and worker nodes) | Multi-zone deployment | |
-| | Red Hat OpenShift workloads | Multi-zone Red Hat OpenShift cluster | |
+| Resiliency: High availability | {{site.data.keyword.satelliteshort}} Host Nodes (control and worker nodes) | Multi-node deployment | |
+| | Red Hat OpenShift workloads | Multi-node Red Hat OpenShift cluster | |
 | Resiliency: Backup | Red Hat OpenShift clusters | Portworx PX Backup for Kubernetes | |
 | Service management: Monitoring | {{site.data.keyword.satelliteshort}} location and hosts | - IBM {{site.data.keyword.satelliteshort}} Monitoring Tool \n - {{site.data.keyword.monitoringlong_notm}} | |
 | | Red Hat OpenShift clusters | {{site.data.keyword.monitoringlong_notm}} | |
@@ -201,7 +197,7 @@ The following table represents a baseline set of requirements, which are applica
 | | Red Hat OpenShift clusters | {{site.data.keyword.cloudaccesstraillong}} |
 {: caption="Table 3. Components" caption-side="bottom"}
 
-## Solution components for hybrid {{site.data.keyword.satelliteshort}} locations
+## Solution components for {{site.data.keyword.satelliteshort}} location in a hyperscaler
 {#components-hybrid}
 
 In addition to the components listed in the {{site.data.keyword.satelliteshort}} location on-premises pattern, there are hyperscaler-related components:
@@ -221,3 +217,10 @@ The table has links that provide additional information about configuring {{site
 {: caption="Table 4. {{site.data.keyword.satelliteshort}} location in a Hyperscaler or VMware" caption-side="bottom"}
 
 The architecture framework is used to guide and determine the applicable aspects and domains for which architecture decisions need to be made. Review the design considerations and architecture decisions for the aspects and domains that are in play in this solution pattern.
+
+<!--
+| | Software Defined Storage | - Red Hat OpenShift Data Foundation \n - Portworx enterprise (if customer is an existing Portworx user) |
+| | Portworx enterprise storage | Worker node host local disks |
+| | {{site.data.keyword.satelliteshort}} services storage template: \n Red Hat OpenShift | Bring your Own Driver: Portworx |
+| | {{site.data.keyword.satelliteshort}} Services Storage Template: \n Other {{site.data.keyword.satelliteshort}} enabled services | Based on {{site.data.keyword.satelliteshort}} enabled service |
+-->
