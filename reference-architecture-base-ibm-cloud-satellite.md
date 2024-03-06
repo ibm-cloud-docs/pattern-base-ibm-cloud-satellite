@@ -1,10 +1,10 @@
---
+---
 
 copyright:
     years: 2024
 lastupdated: "2024-03-06"
 
-keywords: base satellite architecture, architecture diagram
+keywords: satellite architecture
 
 subcollection: pattern-base-ibm-cloud-satellite
 
@@ -50,18 +50,9 @@ Due to privacy, regulatory, or compliance reasons, customers might not send or s
 
 Figure 1 illustrates the {{site.data.keyword.satellitelong_notm}} architecture where one or more {{site.data.keyword.satelliteshort}} locations are deployed on-premises.
 
-
 ![Satellite location on-premises architecture](/images/SatLoc-on-premises-architecture.svg){: caption="Figure 1. Base {{site.data.keyword.satellitelong_notm}} solution architecture with {{site.data.keyword.satelliteshort}} location on-premises" caption-side="bottom"}
 
 {{site.data.keyword.satelliteshort}} link connects on-premises {{site.data.keyword.satelliteshort}} locations to {{site.data.keyword.Bluemix_notm}}. Customers might also choose to use Direct Link. Red Hat OpenShift and Red Hat OpenShift Data Foundation are two of the many other {{site.data.keyword.satelliteshort}}-enabled services in this image that are deployed in the {{site.data.keyword.satelliteshort}} location.
-
-<!--
-Figure 2 illustrates the hybrid {{site.data.keyword.satellitelong_notm}} architecture where one or more {{site.data.keyword.satelliteshort}} locations are deployed on-premises and the other {{site.data.keyword.satelliteshort}} location is deployed in another cloud. The figure shows AWS as the hyperscaler.
-
-![Satellite location hybrid architecture](/images/SatLoc-hybrid-architecture.svg){: caption="Figure 2. Base {{site.data.keyword.satellitelong_notm}} Solution Architecture with Hybrid Satellite locations" caption-side="bottom"}
-
-A {{site.data.keyword.satelliteshort}} location can be created in {{site.data.keyword.Bluemix_notm}}, AWS, Azure, or Google. In this example one location is shown on AWS, while the other {{site.data.keyword.satelliteshort}} location is on-premises.
--->
 
 ## Design scope
 {: #design-scope}
@@ -217,10 +208,3 @@ The table has links that provide additional information about configuring {{site
 {: caption="Table 4. {{site.data.keyword.satelliteshort}} location in a Hyperscaler or VMware" caption-side="bottom"}
 
 The architecture framework is used to guide and determine the applicable aspects and domains for which architecture decisions need to be made. Review the design considerations and architecture decisions for the aspects and domains that are in play in this solution pattern.
-
-<!--
-| | Software Defined Storage | - Red Hat OpenShift Data Foundation \n - Portworx enterprise (if customer is an existing Portworx user) |
-| | Portworx enterprise storage | Worker node host local disks |
-| | {{site.data.keyword.satelliteshort}} services storage template: \n Red Hat OpenShift | Bring your Own Driver: Portworx |
-| | {{site.data.keyword.satelliteshort}} Services Storage Template: \n Other {{site.data.keyword.satelliteshort}} enabled services | Based on {{site.data.keyword.satelliteshort}} enabled service |
--->
