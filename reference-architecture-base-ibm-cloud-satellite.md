@@ -131,11 +131,23 @@ The following table represents a baseline set of requirements, which are applica
 ### Components
 {: #components}
 
+Review the following tables for each component.
+
+### Cloud components
+{: #cloud-components}
+
 | Aspect| Component| How the component is used |
 |---|---|---|
 | Cloud | {{site.data.keyword.satellitelong_notm}} | Distributed cloud paradigm |
 | | Location infrastructure | On-premises: Client provided infrastructure |
 | | Management plane MZR | Closest region (MZR) to {{site.data.keyword.satelliteshort}} location |
+{: caption="Table 3. Cloud components" caption-side="bottom"}
+
+### Compute components 
+{: #compute-componenets}
+
+| Aspect| Component| How the component is used |
+|---|---|---|
 | Compute | {{site.data.keyword.satelliteshort}} location hosts | Virtual machine (VM) or {{site.data.keyword.baremetal_short_sing}} |
 | | Host OS | RHEL 8.x or RHCOS |
 | | Control plane hosts	| 4 vCPU and 16 GB RAM |
@@ -146,11 +158,25 @@ The following table represents a baseline set of requirements, which are applica
 | | Workloads Access | - Red Hat OpenShift Routes \n - Node Ports \n - There is the ability to integrate external load balancers, just point load balancer to the Red Hat OpenShift router node port. {: note} |
 | | Workload isolation | Single cluster for all workloads |
 | | Container Images Registry | {{site.data.keyword.registrylong_notm}} on {{site.data.keyword.Bluemix_notm}} |
+{: caption="Table 4. Compute components" caption-side="bottom"}
+
+### Storage components
+{: #storage-components}
+
+| Aspect| Component| How the component is used |
+|---|---|---|
 | Storage: Primary | {{site.data.keyword.satelliteshort}} Hosts: Control plane and worker nodes host node local storage
 | | {{site.data.keyword.satelliteshort}} Services storage: \n Red Hat OpenShift (Customer Workloads) | Software Defined Storage (SDS) |
 | | Software Defined Storage | Red Hat OpenShift Data Foundation |
 | Storage: Backup | {{site.data.keyword.satelliteshort}} Control Plane Data | {{site.data.keyword.cos_full_notm}} (IBM-managed backups) |
 | | Red Hat OpenShift workload data | Customer might choose to use Cloud Object Storage on {{site.data.keyword.Bluemix_notm}} |
+{: caption="Table 5. Storage components" caption-side="bottom"}
+
+### Networking components
+{: #networking-components}
+
+| Aspect| Component| How the component is used |
+|---|---|---|
 | Networking |Enterprise Connectivity | |
 | | {{site.data.keyword.satelliteshort}} location and {{site.data.keyword.dl_full_notm}} 2.0 connect or internet |
 | | {{site.data.keyword.satelliteshort}} location private Network | VPN or Use {{site.data.keyword.satelliteshort}} link for Transmission Control Protocol (TCP) and HTTPS connections (no User Datagram Protocol)|
@@ -163,30 +189,51 @@ The following table represents a baseline set of requirements, which are applica
 | | Segmentation | |
 | | Red Hat OpenShift cluster | Container network policies |
 | | DNS | Client DNS at {{site.data.keyword.satelliteshort}} location |
-| Security: Data | | |
+{: caption="Table 5. Networking components" caption-side="bottom"}
+
+### Security components
+{: #security-components}
+
+| Aspect| Component| How the component is used |
+|---|---|---|
+| Data | | |
 | Data encryption at rest | {{site.data.keyword.satelliteshort}} control plane backup storage | Cloud Object Storage encrypted with provider keys |
 | | {{site.data.keyword.satelliteshort}} worker nodes data | Worker nodes storage encryption: Customer |
 | | Red Hat OpenShift cluster persistent storage | Cluster volume encryption with Kubernetes Secret |
 | Data encyption in transit | {{site.data.keyword.satelliteshort}} Link | Encryption that uses TLS |
 | | Red Hat OpenShift cluster workloads | App-level encryption that uses TLS |
 | | Certificate Lifecycle Management | Customer on-premises certificate manager |
-| Security: Identity and Access Management (IAM) | | |
+| Identity and Access Management (IAM) | | |
 | IAM: Access & Role Management |	{{site.data.keyword.satelliteshort}} Location | - {{site.data.keyword.Bluemix_notm}} account set up \n - Account and Resource Organization \n - {{site.data.keyword.Bluemix_notm}} IAM roles and access groups |
 | | {{site.data.keyword.satelliteshort}} location hosts | {{site.data.keyword.Bluemix_notm}} IAM | |
 | | {{site.data.keyword.satelliteshort}} services: \n Red Hat OpenShift (Customer Workloads Cluster) | - {{site.data.keyword.Bluemix_notm}} IAM Roles \n - Kubernetes role-based access control (RBAC) Roles |
 | IAM: Application | Runtime security (WAF and DDoS) | Bring your own Edge Security | |
 | IAM: Infrastructure & endpoint | Core Network Protection | Subnets and firewall rules | |
 | IAM: Threat detection and response | Threat detection | Customer SIEM tool, for example, Splunk | |
+{: caption="Table 6. Security components" caption-side="bottom"}
+
+### Resiliency components
+{: #resiliency-components}
+
+| Aspect| Component| How the component is used |
+|---|---|---|
 | Resiliency: High availability | {{site.data.keyword.satelliteshort}} Host Nodes (control and worker nodes) | Multi-node deployment | |
 | | Red Hat OpenShift workloads | Multi-node Red Hat OpenShift cluster | |
 | Resiliency: Backup | Red Hat OpenShift clusters | Portworx PX Backup for Kubernetes | |
+{: caption="Table 7. Resiliency components" caption-side="bottom"}
+
+### Service management components
+{: #service-management-components}
+
+| Aspect| Component| How the component is used |
+|---|---|---|
 | Service management: Monitoring | {{site.data.keyword.satelliteshort}} location and hosts | - IBM {{site.data.keyword.satelliteshort}} Monitoring Tool \n - {{site.data.keyword.monitoringlong_notm}} | |
 | | Red Hat OpenShift clusters | {{site.data.keyword.monitoringlong_notm}} | |
 | Service management: Logging | {{site.data.keyword.satelliteshort}} location and hosts | - IBM {{site.data.keyword.satelliteshort}} {{site.data.keyword.loganalysisshort}} tool \n - {{site.data.keyword.loganalysislong}} |
 | | Red Hat OpenShift clusters | {{site.data.keyword.loganalysislong_notm}} |
 | Service management: Auditing | {{site.data.keyword.satelliteshort}}e location events | {{site.data.keyword.cloudaccesstraillong}} |
 | | Red Hat OpenShift clusters | {{site.data.keyword.cloudaccesstraillong}} |
-{: caption="Table 3. Components" caption-side="bottom"}
+{: caption="Table 8. Service management components" caption-side="bottom"}
 
 ## Solution components for {{site.data.keyword.satelliteshort}} location in a hyperscaler
 {: #components-hybrid}
@@ -205,6 +252,6 @@ The table has links that provide additional information about configuring {{site
 | Azure | [Automating your Azure location setup with a Schematics template](/docs/satellite?topic=satellite-loc-azure-create-auto) |
 | GCP | [Automating your GCP location setup with a Schematics template](/docs/satellite?topic=satellite-loc-gcp-create-auto) |
 | VMware | [Automating your VMware location setup with a Schematics template](/docs/satellite?topic=satellite-loc-vmware-create-auto) |
-{: caption="Table 4. {{site.data.keyword.satelliteshort}} location in a Hyperscaler or VMware" caption-side="bottom"}
+{: caption="Table 9. {{site.data.keyword.satelliteshort}} location in a Hyperscaler or VMware" caption-side="bottom"}
 
 The architecture framework is used to guide and determine the applicable aspects and domains for which architecture decisions need to be made. Review the design considerations and architecture decisions for the aspects and domains that are in play in this solution pattern.
