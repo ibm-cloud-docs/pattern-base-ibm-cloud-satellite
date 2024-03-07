@@ -189,7 +189,7 @@ The following table represents a baseline set of requirements, which are applica
 {: caption="Table 3. Components" caption-side="bottom"}
 
 ## Solution components for {{site.data.keyword.satelliteshort}} location in a hyperscaler
-{#components-hybrid}
+{: #components-hybrid}
 
 In addition to the components listed in the {{site.data.keyword.satelliteshort}} location on-premises pattern, there are hyperscaler-related components:
 
