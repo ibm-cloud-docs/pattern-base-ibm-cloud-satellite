@@ -2,7 +2,7 @@
 
 copyright:
     years: 2024
-lastupdated: "2024-03-06"
+lastupdated: "2024-03-11"
 
 keywords: satellite architecture
 
@@ -15,15 +15,10 @@ authors:
 
 version: 1.0
 
-# Use if the reference architecture has deployable code.
-# Value is the URL to land the user in the IBM Cloud catalog details page for the deployable architecture.
-# See https://test.cloud.ibm.com/docs/get-coding?topic=get-coding-deploy-button
 deployment-url:
 
 docs: https://cloud.ibm.com/docs/pattern-base-ibm-cloud-satellite
 
-# use-case from 'code' column in
-# https://github.ibm.com/digital/taxonomy/blob/main/topics/topics_flat_list.csv
 use-case: Managed cloud
 
 content-type: reference-architecture

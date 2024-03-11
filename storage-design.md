@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024
-lastupdated: "2024-02-12"
+lastupdated: "2024-03-11"
 
 subcollection: pattern-base-ibm-cloud-satellite
 
@@ -26,3 +26,4 @@ There are multiple storage options when it comes to configuring [storage in a {{
 - The *boot* partition must be a minimum of 1 GiB.
 
 For more information, see [Understanding {{site.data.keyword.satelliteshort}} storage](/docs/satellite?topic=satellite-storage-template-ov).
+

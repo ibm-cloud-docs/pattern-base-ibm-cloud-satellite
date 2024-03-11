@@ -13,9 +13,6 @@ keywords: Satellite, location
 # Architecture decisions for security
 {: #security-architecture}
 
-<!-- below is a placeholder for all compute domain decisions  Remove the domains that are not in scope.  If there are decisions
-that need to be added (e.g. platform dependent) add additional rows-->
-
 The following are security architecture decisions for the deployment of Satellite on-premises or in hyperscaler pattern.
 
 ## Architecture decisions for data encryption

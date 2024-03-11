@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024
-lastupdated: "2024-02-08"
+lastupdated: "2024-03-11"
 
 subcollection: pattern-base-ibm-cloud-satellite
 
@@ -14,9 +14,6 @@ keywords: Satellite, location
 
 # Overview
 {: #overview}
-
-<!-- Note to author>    THIS SHOULD BE ABOUT 10 – 15 LINES AND FOLLOW….
-The objective of this pattern is to provide a solution design for……. -->
 
 The objective of this document is to provide a solution design for the deployment Satellite on-premises or in hyperscaler. {{site.data.keyword.satelliteshort}} is a software platform that creates managed cloud services across any environment. 
 
@@ -32,7 +29,7 @@ In addition, you can find a prescriptive, end to end enterprise-class solution d
 While the document describes the various aspects of a {{site.data.keyword.satelliteshort}} solution, network connectivity and security are two key aspects that customers pay close attention to. The objective of this pattern document is to serve as a guide to meet typical customer requirements and provide a base reference solution for a distributed cloud solution that is secure and resilient.
 
 ## {{site.data.keyword.satelliteshort}} components
-{: sat-components}
+{: #sat-components}
 
 There are two major components in {{site.data.keyword.satelliteshort}}:
 - The management plane components along with the services that are available on {{site.data.keyword.Bluemix_notm}}.

@@ -17,8 +17,6 @@ keywords: IBM Cloud Satellite, location, Satellite, base
 
 The following sections summarize the compute architecture decisions for the deployment of {{site.data.keyword.satelliteshort}} on-premises or in hyperscaler pattern.
 
-<!-- below is a placeholder for all compute domain decisions  Remove the domains that are not in scope.  If there are decisions that need to be added (e.g. platform dependent) add additional rows-->
-
 | Architecture decision| Requirement| Options |Decision| Rationale|
 |---|---|---|---|---|
 | Compute: Hosts |{{site.data.keyword.satelliteshort}} hosts | {{site.data.keyword.baremetal_short}} \n Virtual machine (VM) | VM | {{site.data.keyword.satelliteshort}} hosts represent the compute machine on the selected infrastructure. In this solution, the {{site.data.keyword.satelliteshort}} hosts are virtual machines from an existing Kernel-based Virtual Machine or OpenStack environment that deploys at the customer’s on-premises locations. |

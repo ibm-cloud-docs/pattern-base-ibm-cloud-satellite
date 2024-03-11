@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024
-lastupdated: "2024-1-8"
+lastupdated: "2024-03-11"
 
 subcollection: pattern-base-ibm-cloud-satellite
 
@@ -14,6 +14,7 @@ keywords:
 
 # Network design
 {: #network-design}
+
 Networking is a key aspect of any cloud deployment that should not be overlooked. The network design should consider enterprise connectivity, latency, throughput, resiliency, and security requirements. The following items are some of the key requirements from a network perspective:
 
 - Hosts must have minimum network bandwidth connectivity of 100 Mbps, with 1 Gbps preferred.
