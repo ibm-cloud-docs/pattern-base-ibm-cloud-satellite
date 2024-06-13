@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024
-lastupdated: "2024-03-11"
+lastupdated: "2024-02-20"
 
 subcollection: pattern-base-ibm-cloud-satellite
 
@@ -15,7 +15,7 @@ keywords:
 # Storage design
 {: #storage-design}
 
-<!-- text for storage design considerations goes here -->
+
 
 There are multiple storage options when it comes to configuring [storage in a {{site.data.keyword.satelliteshort}} location](/docs/satellite?topic=satellite-reqs-host-storage). Local storage, OpenShift Data Foundation (ODF), Azure file, AWS EBS, NetApp Ontap are some of the available options. Additional storage considerations include:
 

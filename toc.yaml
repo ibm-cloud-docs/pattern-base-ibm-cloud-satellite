@@ -14,18 +14,15 @@ toc:
     path: pattern-base-ibm-cloud-satellite
     description: Deployment considerations for IBM Cloud Satellite with on-premises Satellite location and hybrid Satellite locations
     label: Deploy Satellite on-premises or in hyperscaler
-
   entries:
   - navgroup:
       id: overview
       topics:
       - overview.md
-
   - navgroup:
       id: architecture
       topics:
       - reference-architecture-base-ibm-cloud-satellite.md
-
   - navgroup:
       id: plan
       topics:
@@ -64,18 +61,16 @@ toc:
             navtitle: Resiliency
           - topic: service-management-architecture.md
             navtitle: Service management
-
+          # - other-architecture.md
   - navgroup:
       id: deploy
       topics:
       - topic-7.md
       - topic-8.md
-
   - navgroup:
       id: reference
       topics:
       - references.md
-
   - navgroup:
       id: help
       topics:

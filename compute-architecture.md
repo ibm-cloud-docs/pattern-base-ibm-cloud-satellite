@@ -17,6 +17,8 @@ keywords: IBM Cloud Satellite, location, Satellite, base
 
 The following sections summarize the compute architecture decisions for the deployment of {{site.data.keyword.satelliteshort}} on-premises or in hyperscaler pattern.
 
+
+
 | Architecture decision| Requirement| Options |Decision| Rationale|
 |---|---|---|---|---|
 | Compute: Hosts |{{site.data.keyword.satelliteshort}} hosts | {{site.data.keyword.baremetal_short}} \n Virtual machine (VM) | VM | {{site.data.keyword.satelliteshort}} hosts represent the compute machine on the selected infrastructure. In this solution, the {{site.data.keyword.satelliteshort}} hosts are virtual machines from an existing Kernel-based Virtual Machine or OpenStack environment that deploys at the customer’s on-premises locations. |
@@ -31,3 +33,4 @@ The following sections summarize the compute architecture decisions for the depl
 | | | | Node ports | Expose non-HTTP(S) apps, for example, User Datagram Protocol or Transmission Control Protocol (TCP) apps, with a NodePort in the 30000-32767 range. |
 | |Red Hat OpenShift cluster: Workload isolation | Single cluster for all workloads \n Separate clusters per workload | Single cluster for all workloads | Single cluster for all workloads. Workload isolation is achieved through projects and namespaces within a cluster. For more information, see [Container network policies](/docs/openshift?topic=openshift-network_policies), and IAM access roles. |
 {: caption="Table 1. Architecture decisions for compute" caption-side="bottom"}
+

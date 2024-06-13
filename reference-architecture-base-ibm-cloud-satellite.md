@@ -2,7 +2,7 @@
 
 copyright:
     years: 2024
-lastupdated: "2024-03-11"
+lastupdated: "2024-03-06"
 
 keywords: satellite architecture
 
@@ -15,10 +15,15 @@ authors:
 
 version: 1.0
 
+# Use if the reference architecture has deployable code.
+# Value is the URL to land the user in the IBM Cloud catalog details page for the deployable architecture.
+# See https://test.cloud.ibm.com/docs/get-coding?topic=get-coding-deploy-button
 deployment-url:
 
 docs: https://cloud.ibm.com/docs/pattern-base-ibm-cloud-satellite
 
+# use-case from 'code' column in
+# https://github.ibm.com/digital/taxonomy/blob/main/topics/topics_flat_list.csv
 use-case: Managed cloud
 
 content-type: reference-architecture
@@ -99,6 +104,7 @@ The following table represents a baseline set of requirements, which are applica
 {: caption="Table 1. Requirements" caption-side="bottom"}
 
 ### {{site.data.keyword.satelliteshort}} shared responsibility
+{: #shared-responsibility}
 
 {{site.data.keyword.Bluemix_notm}} {{site.data.keyword.satelliteshort}} is a fully managed offering and there are certain responsibilities that are shared by IBM and the customer. The following table explains the breakdown. For more information about the table and the corresponding task details, see [{{site.data.keyword.satelliteshort}} responsibilities](/docs/satellite?topic=satellite-responsibilities).
 
@@ -212,9 +218,9 @@ Review the following tables for each component.
 
 | Aspect| Component| How the component is used |
 |---|---|---|
-| Resiliency: High availability | {{site.data.keyword.satelliteshort}} Host Nodes (control and worker nodes) | Multi-node deployment | |
+| High availability | {{site.data.keyword.satelliteshort}} Host Nodes (control and worker nodes) | Multi-node deployment | |
 | | Red Hat OpenShift workloads | Multi-node Red Hat OpenShift cluster | |
-| Resiliency: Backup | Red Hat OpenShift clusters | Portworx PX Backup for Kubernetes | |
+| Backup | Red Hat OpenShift clusters | Portworx PX Backup for Kubernetes | |
 {: caption="Table 7. Resiliency components" caption-side="bottom"}
 
 ### Service management components
@@ -222,11 +228,11 @@ Review the following tables for each component.
 
 | Aspect| Component| How the component is used |
 |---|---|---|
-| Service management: Monitoring | {{site.data.keyword.satelliteshort}} location and hosts | - IBM {{site.data.keyword.satelliteshort}} Monitoring Tool \n - {{site.data.keyword.monitoringlong_notm}} | |
+| Monitoring | {{site.data.keyword.satelliteshort}} location and hosts | - IBM {{site.data.keyword.satelliteshort}} Monitoring Tool \n - {{site.data.keyword.monitoringlong_notm}} | |
 | | Red Hat OpenShift clusters | {{site.data.keyword.monitoringlong_notm}} | |
-| Service management: Logging | {{site.data.keyword.satelliteshort}} location and hosts | - IBM {{site.data.keyword.satelliteshort}} {{site.data.keyword.loganalysisshort}} tool \n - {{site.data.keyword.loganalysislong}} |
+| Logging | {{site.data.keyword.satelliteshort}} location and hosts | - IBM {{site.data.keyword.satelliteshort}} {{site.data.keyword.loganalysisshort}} tool \n - {{site.data.keyword.loganalysislong}} |
 | | Red Hat OpenShift clusters | {{site.data.keyword.loganalysislong_notm}} |
-| Service management: Auditing | {{site.data.keyword.satelliteshort}}e location events | {{site.data.keyword.cloudaccesstraillong}} |
+| Auditing | {{site.data.keyword.satelliteshort}}e location events | {{site.data.keyword.cloudaccesstraillong}} |
 | | Red Hat OpenShift clusters | {{site.data.keyword.cloudaccesstraillong}} |
 {: caption="Table 8. Service management components" caption-side="bottom"}
 

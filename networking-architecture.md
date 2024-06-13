@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024
-lastupdated: "2024-02-15"
+lastupdated: "2024-02-20"
 
 subcollection: pattern-base-ibm-cloud-satellite
 
@@ -15,7 +15,7 @@ keywords: Satellite, location
 # Architecture decisions for networking
 {: #networking-architecture}
 
-The following tables summarize the networking architecture decisions for the deployment of Satellite on-premises or in hyperscaler.
+The following tables summarize the networking architecture decisions for the deployment of Satellite on-premises or in hyperscaler pattern.
 
 ## Architecture decisions for enterprise connectivity
 {: #enterprise-connectivity}

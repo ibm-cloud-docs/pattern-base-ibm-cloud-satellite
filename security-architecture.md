@@ -13,6 +13,8 @@ keywords: Satellite, location
 # Architecture decisions for security
 {: #security-architecture}
 
+
+
 The following are security architecture decisions for the deployment of Satellite on-premises or in hyperscaler pattern.
 
 ## Architecture decisions for data encryption
