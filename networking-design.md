@@ -27,7 +27,7 @@ The table shows IP address ranges that are reserved for {{site.data.keyword.sate
 |---|---|
 | Non-CoreOS enabled locations | 172.16.0.0/16, 172.18.0.0/16, 172.19.0.0/16, 172.20.0.0/16, and 192.168.255.0/24 |
 | CoreOS enabled locations | 172.20.0.0/16 and 172.16.0.0/16 |
-{: caption="Table 1. Reserved IP Addresses" caption-side="bottom"}
+{: caption="Reserved IP Addresses" caption-side="bottom"}
 
 
 {{site.data.keyword.satellitelong_notm}} link securely connects a Satellite location to the IBM Cloud region that manages the location. Communication to and from the Satellite location is proxied by the Link tunnel server. Satellite link uses a zero trust model and all communication over [Satellite link](/docs/satellite?topic=satellite-link-location-cloud) is encrypted by IBM.

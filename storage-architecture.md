@@ -29,4 +29,4 @@ The following sections summarize the storage architecture decisions for the depl
 |  | Satellite Services Storage Template: Other Satellite-Enabled Services | [Storage Templates](/docs/satellite?topic=satellite-storage-template-ov#storage-template-ov-providers) | Based on Satellite Enabled Service | Use Storage Template supported by the Satellite-Enabled Service; one Storage Template for each service. This reference solution doesn’t include any other Satellite-enabled services. |
 |  | Storage: Backup | | | |
 | | Satellite Control Plane | Cloud Object Storage (COS) | Cloud Object Storage (COS) | A customer-owned COS bucket must be provided to be used for IBM-managed backups of the Satellite location control plane data. See [Creating Satellite Locations](/docs/satellite?topic=satellite-locations) for details. |
-{: caption="Table 1. Architecture decisions for storage" caption-side="bottom"}
+{: caption="Architecture decisions for storage" caption-side="bottom"}
