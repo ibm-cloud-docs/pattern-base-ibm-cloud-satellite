@@ -38,7 +38,7 @@ The following are network segmentation and isolation architecture decisions for 
 
 | Architecture decision | Requirement | Option | Decision | Rationale |
 |---|---|---|---|---|
-| Network segmentation | Network segmentation and isolation | - [Container network policies](/docs/openshift?topic=openshift-network_policies) \n - Red Hat OpenShift service mesh | Container network policies | Container network policies restrict egress and ingress traffic and communication between applications. \n - Allow or block network traffic on specific network interfaces regardless of the Kubernetes pod source or destination IP address or Classless Inter-Domain Routing (CIDR). \n - Allow or block network traffic for pods across namespaces. For more information, see [Overview of network security options](/docs/openshift?topic=openshift-vpc-network-policy). |
+| Network segmentation | Network segmentation and isolation | - [Container network policies](/docs/openshift?topic=openshift-network_policies) \n - Red Hat OpenShift service mesh | Container network policies | Container network policies restrict egress and ingress traffic and communication between applications. \n - Allow or block network traffic on specific network interfaces regardless of the Kubernetes pod source or destination IP address or Classless Inter-Domain Routing (CIDR). \n - Allow or block network traffic for pods across namespaces. |
 {: caption="Architecture decisions for network segmentation and isolation" caption-side="bottom"}
 
 
@@ -50,7 +50,7 @@ The following are load balancing architecture decisions for this design.
 
 | Architecture decision | Requirement | Option | Decision | Rationale |
 |---|---|---|---|---|
-|Load Balancing | Application Load Balancer (ALB) | - 3rd party load balancer: Ingress controller \n - External load balancer in cloud provider | 3rd party load balancer: Ingress controller  | Use a [third-party load balancer and Red Hat OpenShift routes](docs/openshift?topic=openshift-sat-expose-apps) to expose apps with a hostname and add health checking for the host IP addresses that are registered in the router's Domain Name System (DNS) records. As an example, [MetalLB](https://metallb.universe.tf/){: external} can be deployed on Red Hat OpenShift cluster worker nodes that are dedicated to the Ingress controller. |
+|Load Balancing | Application Load Balancer (ALB) | - 3rd party load balancer: Ingress controller \n - External load balancer in cloud provider | 3rd party load balancer: Ingress controller  | Use a [third-party load balancer and Red Hat OpenShift routes](/docs/openshift?topic=openshift-sat-expose-apps) to expose apps with a hostname and add health checking for the host IP addresses that are registered in the router's Domain Name System (DNS) records. As an example, [MetalLB](https://metallb.universe.tf/){: external} can be deployed on Red Hat OpenShift cluster worker nodes that are dedicated to the Ingress controller. |
 {: caption="Architecture decisions for load balancing" caption-side="bottom"}
 
 

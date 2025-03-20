@@ -71,7 +71,7 @@ The base {{site.data.keyword.satellitelong_notm}} solution covers design conside
 
 - **[Resiliency](/docs/pattern-base-ibm-cloud-satellite?topic=pattern-base-ibm-cloud-satellite-resiliency-design):** Backup and Restore, High Availability
 
-- **[Service Management](/docs/pattern-base-ibm-cloud-satellite?topic=pattern-base-ibm-cloud-service-management-design):** Monitoring, Logging, Auditing/Tracking
+- **[Service Management](/docs/pattern-base-ibm-cloud-satellite?topic=pattern-base-ibm-cloud-satellite-service):** Monitoring, Logging, Auditing/Tracking
 
 The [Introduction to the architecture framework](/docs/architecture-framework?topic=architecture-framework-intro), provides a consistent approach to design cloud solutions by addressing requirements across a pre-defined set of aspects and domains, which are technology-agnostic architectural areas to consider for any enterprise solution. It can be used as a guide to make the necessary design and component choices. After you have identified the applicable requirements and domains that are in scope, you can evaluate and select the best fit for purpose components for your enterprise cloud solution.
 
@@ -108,7 +108,7 @@ The following table represents a baseline set of requirements, which are applica
 
 {{site.data.keyword.Bluemix_notm}} {{site.data.keyword.satelliteshort}} is a fully managed offering and there are certain responsibilities that are shared by IBM and the customer. The following table explains the breakdown. For more information about the table and the corresponding task details, see [{{site.data.keyword.satelliteshort}} responsibilities](/docs/satellite?topic=satellite-responsibilities).
 
-| Resource | [Incident and operations management](docs/satellite?topic=satellite-responsibilities#incident-and-ops) | [Change management](/docs/satellite?topic=satellite-responsibilities#change-management) | [Identity and access management](/docs/satellite?topic=satellite-responsibilities#iam-responsibilities) | [Security and regulation compliance](/docs/satellite?topic=satellite-responsibilities#security-compliance) | [Disaster Recovery](/docs/satellite?topic=satellite-responsibilities#disaster-recovery) |
+| Resource | [Incident and operations management](/docs/satellite?topic=satellite-responsibilities#incident-and-ops) | [Change management](/docs/satellite?topic=satellite-responsibilities#change-management) | [Identity and access management](/docs/satellite?topic=satellite-responsibilities#iam-responsibilities) | [Security and regulation compliance](/docs/satellite?topic=satellite-responsibilities#security-compliance) | [Disaster Recovery](/docs/satellite?topic=satellite-responsibilities#disaster-recovery) |
 |---|---|---|---|---|---|
 | Data | Customer | Customer | Customer | Customer | Customer |
 | Application | Customer | Customer | Customer | Customer | Customer |

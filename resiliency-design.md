@@ -17,7 +17,7 @@ keywords:
 
 Resiliency is best achieved by deploying more than one {{site.data.keyword.satellitelong_notm}} locations and duplicating the configuration.
 
-High availability in a {{site.data.keyword.satellitelong_notm}} solution architecture can be achieved on 3 levels - {{site.data.keyword.satellitelong_notm}} Management plane, {{site.data.keyword.satellitelong_notm}} Control plane, IBM Cloud services. See [{{site.data.keyword.satelliteshort}} Link](docs/satellite?topic=satellite-ha).
+High availability in a {{site.data.keyword.satellitelong_notm}} solution architecture can be achieved on 3 levels - {{site.data.keyword.satellitelong_notm}} Management plane, {{site.data.keyword.satellitelong_notm}} Control plane, IBM Cloud services. See [{{site.data.keyword.satelliteshort}} Link](/docs/satellite?topic=satellite-ha).
 
 
 | Component Level | Description | Comments |
