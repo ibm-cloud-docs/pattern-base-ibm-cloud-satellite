@@ -144,7 +144,7 @@ Review the following tables for each component.
 | | Management plane MZR | Closest region (MZR) to {{site.data.keyword.satelliteshort}} location |
 {: caption="Cloud components" caption-side="bottom"}
 
-### Compute components 
+### Compute components
 {: #compute-componenets}
 
 | Aspect| Component| How the component is used |
@@ -230,8 +230,8 @@ Review the following tables for each component.
 |---|---|---|
 | Monitoring | {{site.data.keyword.satelliteshort}} location and hosts | - IBM {{site.data.keyword.satelliteshort}} Monitoring Tool \n - {{site.data.keyword.monitoringlong_notm}} | |
 | | Red Hat OpenShift clusters | {{site.data.keyword.monitoringlong_notm}} | |
-| Logging | {{site.data.keyword.satelliteshort}} location and hosts | - IBM {{site.data.keyword.satelliteshort}} {{site.data.keyword.loganalysisshort}} tool \n - {{site.data.keyword.loganalysislong}} |
-| | Red Hat OpenShift clusters | {{site.data.keyword.loganalysislong_notm}} |
+| Logging | {{site.data.keyword.satelliteshort}} location and hosts | - IBM {{site.data.keyword.satelliteshort}} {{site.data.keyword.logs_full_notm}} tool \n - {{site.data.keyword.logs_full_notm}} |
+| | Red Hat OpenShift clusters | {{site.data.keyword.logs_full_notm}} |
 | Auditing | {{site.data.keyword.satelliteshort}}e location events | {{site.data.keyword.cloudaccesstraillong}} |
 | | Red Hat OpenShift clusters | {{site.data.keyword.cloudaccesstraillong}} |
 {: caption="Service management components" caption-side="bottom"}
