@@ -63,7 +63,7 @@ The base {{site.data.keyword.satellitelong_notm}} solution covers design conside
 
 - **[Storage](/docs/pattern-base-ibm-cloud-satellite?topic=pattern-base-ibm-cloud-satellite-storage-design):** Primary Storage, Backup Storage
 
-- **[Networking](/docs/pattern-base-ibm-cloud-satellite?topic=pattern-base-ibm-cloud-satellite-networking-design):** Enterprise Connectivity, Network Segmentation
+- **[Networking](/docs/pattern-base-ibm-cloud-satellite?topic=pattern-base-ibm-cloud-satellite-network-design):** Enterprise Connectivity, Network Segmentation
 
 - **[Data](/docs/pattern-base-ibm-cloud-satellite?topic=pattern-base-ibm-cloud-satellite-data-design):** Data Storage (highlighting the Data Residency requirement)
 
