@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024
-lastupdated: "2024-02-20"
+lastupdated: "2025-03-20"
 
 subcollection: pattern-base-ibm-cloud-satellite
 
@@ -17,7 +17,7 @@ keywords: Satellite, location
 
 
 
-The objective of this document is to provide a solution design for the deployment of {{site.data.keyword.satelliteshort}} on-premises or in hyperscaler pattern. {{site.data.keyword.satelliteshort}} is a software platform that creates managed cloud services across any environment. 
+The objective of this document is to provide a solution design for the deployment of {{site.data.keyword.satelliteshort}} on-premises or in hyperscaler pattern. {{site.data.keyword.satelliteshort}} is a software platform that creates managed cloud services across any environment.
 
 In this guide, you can find the useful information about the configuration of a {{site.data.keyword.satelliteshort}} location that can be either on-premises, in {{site.data.keyword.Bluemix_short}}, or within any other cloud.
 

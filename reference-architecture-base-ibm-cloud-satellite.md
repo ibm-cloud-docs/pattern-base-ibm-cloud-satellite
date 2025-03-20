@@ -2,7 +2,7 @@
 
 copyright:
     years: 2024
-lastupdated: "2024-03-06"
+lastupdated: "2025-03-20"
 
 keywords: satellite architecture
 
@@ -232,8 +232,8 @@ Review the following tables for each component.
 | | Red Hat OpenShift clusters | {{site.data.keyword.monitoringlong_notm}} | |
 | Logging | {{site.data.keyword.satelliteshort}} location and hosts | - IBM {{site.data.keyword.satelliteshort}} {{site.data.keyword.logs_full_notm}} tool \n - {{site.data.keyword.logs_full_notm}} |
 | | Red Hat OpenShift clusters | {{site.data.keyword.logs_full_notm}} |
-| Auditing | {{site.data.keyword.satelliteshort}}e location events | {{site.data.keyword.cloudaccesstraillong}} |
-| | Red Hat OpenShift clusters | {{site.data.keyword.cloudaccesstraillong}} |
+| Auditing | {{site.data.keyword.satelliteshort}} location events | {{site.data.keyword.logs_full_notm}} |
+| | Red Hat OpenShift clusters | {{site.data.keyword.logs_full_notm}} |
 {: caption="Service management components" caption-side="bottom"}
 
 ## Solution components for {{site.data.keyword.satelliteshort}} location in a hyperscaler
