@@ -2,7 +2,7 @@
 
 copyright:
   years: 2024
-lastupdated: "2024-02-20"
+lastupdated: "2024-02-14"
 
 subcollection: pattern-base-ibm-cloud-satellite
 

@@ -1,0 +1,28 @@
+{
+  "version": 2,
+  "title": "Maximo on Satellite",
+  "introduction":"This is a landing page for the reference architecture describing how to host SAP on IBM VPC environments.",
+  "section_topics": {
+  "links": [
+    {
+      "title": "Overview",
+      "href": "/docs/pattern-maximo-on-satellite?topic=pattern-maximo-on-satellite-overview"
+    },
+    {
+      "title": "Reference Architecture",
+      "href": "/docs/pattern-maximo-on-satellite?topic=pattern-maximo-on-satellite-maximo-on-satellite"
+    },
+    {
+      "title": "Planning",
+      "href": "/docs/pattern-maximo-on-satellite?topic=pattern-maximo-on-satellite-compute-design"
+    }
+  ]
+},
+  "section_architectures": [
+    {
+      "title": "Maximo on Satellite Architecture Decisions",
+      "href": "/docs/pattern-maximo-on-satellite?topic=pattern-maximo-on-satellite-compute",
+      "deployable": false
+    }
+  ]
+ }
